@@ -3,17 +3,25 @@ class Square {
         this.status = "unclicked"; // unclicked, filled, exed, maybe
         this.value = 0;
         this.handleClick = this.handleClick.bind(this);
+        this.square = document.createElement("div");
+        this.square.addEventListener('click', () => this.handleClick())
+
     }
 
     handleClick() {
-        debugger
-        if (this.status=== "filled") {
+   
+        if (this.status === "filled") {
+         
             this.status = 'unclicked';
             this.value = 0;
+          
         }else {
-            this.status === "filled";
+           
+            this.status = "filled";
             this.value = 1;
         }
+        this.render();
+        return;
     }
 
     handleRightClick() {
@@ -37,11 +45,10 @@ class Square {
     }
 
     render() {
-        let square = document.createElement("div");
-        square.className="square ";
-        square.className += this.status;
-        square.addEventListener('click', () => console.log("click"))
-        return square;
+        
+        this.square.className="square ";
+        this.square.className += this.status;
+        return this.square;
     }
    
 }

@@ -20,7 +20,7 @@ class Board {
             for( let j = 0; j < this.grid[i].length; j++){
                 let square = new Square();
                 
-                this.grid[i][j] = square.render();
+                this.grid[i][j] = square;
             }
         }
     }
@@ -37,7 +37,8 @@ class Board {
                 let rowDiv = document.createElement("div");
                 rowDiv.className= "row-div"
                 for(let j = 0; j < this.grid[i].length; j++){
-                    rowDiv.appendChild(this.grid[i][j])
+                    let square = this.grid[i][j]
+                    rowDiv.appendChild(square.render())
                     console.log(this.grid[i][j])
                 }
            

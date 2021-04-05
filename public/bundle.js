@@ -484,7 +484,7 @@ class Board {
             for( let j = 0; j < this.grid[i].length; j++){
                 let square = new _square__WEBPACK_IMPORTED_MODULE_0__.default();
                 
-                this.grid[i][j] = square.render();
+                this.grid[i][j] = square;
             }
         }
     }
@@ -501,7 +501,8 @@ class Board {
                 let rowDiv = document.createElement("div");
                 rowDiv.className= "row-div"
                 for(let j = 0; j < this.grid[i].length; j++){
-                    rowDiv.appendChild(this.grid[i][j])
+                    let square = this.grid[i][j]
+                    rowDiv.appendChild(square.render())
                     console.log(this.grid[i][j])
                 }
            
@@ -533,17 +534,25 @@ class Square {
         this.status = "unclicked"; // unclicked, filled, exed, maybe
         this.value = 0;
         this.handleClick = this.handleClick.bind(this);
+        this.square = document.createElement("div");
+        this.square.addEventListener('click', () => this.handleClick())
+
     }
 
     handleClick() {
-        debugger
-        if (this.status=== "filled") {
+   
+        if (this.status === "filled") {
+         
             this.status = 'unclicked';
             this.value = 0;
+          
         }else {
-            this.status === "filled";
+           
+            this.status = "filled";
             this.value = 1;
         }
+        this.render();
+        return;
     }
 
     handleRightClick() {
@@ -567,11 +576,10 @@ class Square {
     }
 
     render() {
-        let square = document.createElement("div");
-        square.className="square ";
-        square.className += this.status;
-        square.addEventListener('click', () => console.log("click"))
-        return square;
+        
+        this.square.className="square ";
+        this.square.className += this.status;
+        return this.square;
     }
    
 }
