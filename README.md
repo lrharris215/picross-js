@@ -20,3 +20,16 @@
 
 
 ![wireframe](./images/wireframe.png)
+
+## Architecture and Technology
+
+= This project will be built using just vanilla javascript, HTML, and CSS/SCSS. 
+
+## Implementation Timeline
+- Monday and Tuesday will be spent building the components and game logic. 
+- Wednesday building a level
+- Thursday building the rest of the levels
+- Friday css/ finishing touches
+
+## Bonus Features
+- A narrative
