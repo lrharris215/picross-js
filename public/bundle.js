@@ -111,8 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
 
 
-console.log("what the fuck am I doing")
-console.log("I hate app academy")
+
 })();
 
 /******/ })()
