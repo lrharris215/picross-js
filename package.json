@@ -2,7 +2,7 @@
   "name": "js_picross",
   "version": "1.0.0",
   "description": "Picross game!",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --mode=development"
