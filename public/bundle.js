@@ -15,7 +15,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _square__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./square */ "./public/javascripts/square.js");
 
 class Board {
+    constructor(size){
+        this.grid = this.makeGrid(size)
+        debugger
+        this.populateGrid();
+    }
 
+    makeGrid(size) {
+        debugger
+        let grid = [];
+        for(let i = 0; i < size; i ++) {
+            grid.push(new Array(size))
+        }
+        return grid;
+    }
+
+    populateGrid(){
+        debugger
+        for(let i = 0; i < this.grid.length; i++) {
+            for( let j = 0; j < this.grid[i].length; j++){
+                let square = document.createElement('div');
+                square.className = "square";
+            }
+        }
+    }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Board);
@@ -35,29 +58,36 @@ __webpack_require__.r(__webpack_exports__);
 class Square {
     constructor() {
         this.status = "unclicked"; // unclicked, filled, exed, maybe
+        this.value = 0;
     }
 
     handleClick() {
         if (this.status=== "filled") {
             this.status = 'unclicked';
+            this.value = 0;
         }else {
-            this.status === "filled"
+            this.status === "filled";
+            this.value = 1;
         }
     }
 
     handleRightClick() {
         if (this.status === "exed") {
             this.status = "unclicked";
+            this.value = 0;
         }else {
             this.status = "exed"
+            this.value = 0;
         }
     }
 
     handleMiddleClick() {
         if (this.status === "maybe") {
-            this.status = "unclicked"
+            this.status = "unclicked";
+            this.value = 0;
         }else {
-            this.status = "maybe"
+            this.status = "maybe";
+            this.value = 0;
         }
     }
 }
@@ -133,7 +163,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
 
 
-
+let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5);
 })();
 
 /******/ })()
