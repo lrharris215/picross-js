@@ -36,8 +36,9 @@ class Square {
 
     render() {
         let square = document.createElement("div");
-        square.className="square";
-        square.innerHTML= this.status;
+        square.className="square ";
+        square.className += this.status;
+        // square.innerHTML= this.status;
         return square;
     }
    

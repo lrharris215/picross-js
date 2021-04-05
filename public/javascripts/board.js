@@ -26,8 +26,9 @@ class Board {
     }
 
     render() {
-        let board = document.getElementById("board")
-        board.className = "board"
+        let board = document.getElementById("board");
+        let newBoard = document.createElement("div")
+        board.className = "board";
         if (!board) {
             console.log("NO Board")
         }
@@ -38,9 +39,10 @@ class Board {
                 for(let j = 0; j < this.grid[i].length; j++){
                     rowDiv.append(this.grid[i][j])
                 }
-                debugger
-                board.append(rowDiv)
+           
+                newBoard.append(rowDiv)
             }
+            board.innerHTML = newBoard.innerHTML;
         return board;
         }
         

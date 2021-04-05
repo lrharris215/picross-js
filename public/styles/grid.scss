@@ -1,7 +1,16 @@
 .board {
-    .square {
-        width: 25px;
-        height: 25px;
-        background-color: aquamarine;
+    border: 2px solid black;
+    width: fit-content;
+    .row-div {
+        display: flex;
+        .square {
+            width: 25px;
+            height: 25px;
+            border: 1px outset black;
+        }
+        .unclicked {
+            background-color: aquamarine;
+            border: 1px inset black;
+        }
     }
 }
