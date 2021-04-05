@@ -27,7 +27,7 @@ class Board {
 
     render() {
         let board = document.getElementById("board")
-   
+        board.className = "board"
         if (!board) {
             console.log("NO Board")
         }

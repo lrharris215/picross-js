@@ -10,7 +10,13 @@ const config = {
   plugins: [
     new webpack.ProgressPlugin()
   ],
-  devtool: 'source-map'
+  devtool: 'source-map',
+  module: {
+      rules: [ {
+            test: /\.(scss|css)$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
+      }]
+  }
 }
 
 module.exports = config
