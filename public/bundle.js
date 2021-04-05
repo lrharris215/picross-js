@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".board {\n  border: 2px solid black;\n  width: fit-content;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n  border: 1px inset black;\n}", "",{"version":3,"sources":["webpack://./public/styles/components/grid.scss","webpack://./public/styles/index.scss"],"names":[],"mappings":"AAAA;EACI,uBAAA;EACA,kBAAA;ACCJ;ADAI;EACI,aAAA;ACER;ADDQ;EACI,WAAA;EACA,YAAA;EACA,wBAAA;ACGZ;ADDQ;EACI,4BAAA;EACA,uBAAA;ACGZ","sourcesContent":[".board {\n    border: 2px solid black;\n    width: fit-content;\n    .row-div {\n        display: flex;\n        .square {\n            width: 25px;\n            height: 25px;\n            border: 1px outset black;\n        }\n        .unclicked {\n            background-color: aquamarine;\n            border: 1px inset black;\n        }\n    }\n}\n",".board {\n  border: 2px solid black;\n  width: fit-content;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n  border: 1px inset black;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  border: 2px solid black;\n  width: fit-content;\n  margin: 0 auto;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .row-div .filled {\n  background-color: teal;\n}\n.board .row-div .exed {\n  background-color: red;\n}\n.board .row-div .maybe {\n  background-color: pink;\n}", "",{"version":3,"sources":["webpack://./public/styles/main.scss","webpack://./public/styles/index.scss","webpack://./public/styles/components/grid.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,kBAAA;ACCJ;;ADEA;EACI,iBAAA;ACCJ;;ACPA;EACI,uBAAA;EACA,kBAAA;EACA,cAAA;ADUJ;ACTI;EACI,aAAA;ADWR;ACVQ;EACI,WAAA;EACA,YAAA;EACA,wBAAA;ADYZ;ACVQ;EACI,4BAAA;ADYZ;ACVQ;EACI,sBAAA;ADYZ;ACVQ;EACI,qBAAA;ADYZ;ACVQ;EACI,sBAAA;ADYZ","sourcesContent":["body {\n    background-color: navy;\n    text-align: center;\n}\n\nh1 {\n    color: aquamarine;\n}\n","body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  border: 2px solid black;\n  width: fit-content;\n  margin: 0 auto;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .row-div .filled {\n  background-color: teal;\n}\n.board .row-div .exed {\n  background-color: red;\n}\n.board .row-div .maybe {\n  background-color: pink;\n}",".board {\n    border: 2px solid black;\n    width: fit-content;\n    margin: 0 auto;\n    .row-div {\n        display: flex;\n        .square {\n            width: 25px;\n            height: 25px;\n            border: 1px outset black;\n        }\n        .unclicked {\n            background-color: aquamarine;\n        }\n        .filled {\n            background-color: teal;\n        }\n        .exed {\n            background-color: red;\n        }\n        .maybe {\n            background-color: pink;\n        }\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -483,7 +483,7 @@ class Board {
         for(let i = 0; i < this.grid.length; i++) {
             for( let j = 0; j < this.grid[i].length; j++){
                 let square = new _square__WEBPACK_IMPORTED_MODULE_0__.default();
-          
+                
                 this.grid[i][j] = square.render();
             }
         }
@@ -491,7 +491,7 @@ class Board {
 
     render() {
         let board = document.getElementById("board");
-        let newBoard = document.createElement("div")
+        board.innerHTML = "";
         board.className = "board";
         if (!board) {
             console.log("NO Board")
@@ -501,12 +501,13 @@ class Board {
                 let rowDiv = document.createElement("div");
                 rowDiv.className= "row-div"
                 for(let j = 0; j < this.grid[i].length; j++){
-                    rowDiv.append(this.grid[i][j])
+                    rowDiv.appendChild(this.grid[i][j])
+                    console.log(this.grid[i][j])
                 }
            
-                newBoard.append(rowDiv)
+                board.appendChild(rowDiv)
             }
-            board.innerHTML = newBoard.innerHTML;
+            
         return board;
         }
         
@@ -531,9 +532,11 @@ class Square {
     constructor() {
         this.status = "unclicked"; // unclicked, filled, exed, maybe
         this.value = 0;
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
+        debugger
         if (this.status=== "filled") {
             this.status = 'unclicked';
             this.value = 0;
@@ -567,7 +570,7 @@ class Square {
         let square = document.createElement("div");
         square.className="square ";
         square.className += this.status;
-        // square.innerHTML= this.status;
+        square.addEventListener('click', () => console.log("click"))
         return square;
     }
    

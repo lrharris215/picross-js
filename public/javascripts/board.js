@@ -19,7 +19,7 @@ class Board {
         for(let i = 0; i < this.grid.length; i++) {
             for( let j = 0; j < this.grid[i].length; j++){
                 let square = new Square();
-          
+                
                 this.grid[i][j] = square.render();
             }
         }
@@ -27,7 +27,7 @@ class Board {
 
     render() {
         let board = document.getElementById("board");
-        let newBoard = document.createElement("div")
+        board.innerHTML = "";
         board.className = "board";
         if (!board) {
             console.log("NO Board")
@@ -37,12 +37,13 @@ class Board {
                 let rowDiv = document.createElement("div");
                 rowDiv.className= "row-div"
                 for(let j = 0; j < this.grid[i].length; j++){
-                    rowDiv.append(this.grid[i][j])
+                    rowDiv.appendChild(this.grid[i][j])
+                    console.log(this.grid[i][j])
                 }
            
-                newBoard.append(rowDiv)
+                board.appendChild(rowDiv)
             }
-            board.innerHTML = newBoard.innerHTML;
+            
         return board;
         }
         
