@@ -17,12 +17,11 @@ __webpack_require__.r(__webpack_exports__);
 class Board {
     constructor(size){
         this.grid = this.makeGrid(size)
-        debugger
         this.populateGrid();
     }
 
     makeGrid(size) {
-        debugger
+    
         let grid = [];
         for(let i = 0; i < size; i ++) {
             grid.push(new Array(size))
@@ -31,13 +30,35 @@ class Board {
     }
 
     populateGrid(){
-        debugger
+     
         for(let i = 0; i < this.grid.length; i++) {
             for( let j = 0; j < this.grid[i].length; j++){
-                let square = document.createElement('div');
-                square.className = "square";
+                let square = new _square__WEBPACK_IMPORTED_MODULE_0__.default();
+          
+                this.grid[i][j] = square.render();
             }
         }
+    }
+
+    render() {
+        let board = document.getElementById("board")
+   
+        if (!board) {
+            console.log("NO Board")
+        }
+        else {
+            for(let i = 0; i < this.grid.length; i ++){
+                let rowDiv = document.createElement("div");
+                rowDiv.className= "row-div"
+                for(let j = 0; j < this.grid[i].length; j++){
+                    rowDiv.append(this.grid[i][j])
+                }
+                debugger
+                board.append(rowDiv)
+            }
+        return board;
+        }
+        
     }
 }
 
@@ -90,6 +111,14 @@ class Square {
             this.value = 0;
         }
     }
+
+    render() {
+        let square = document.createElement("div");
+        square.className="square";
+        square.innerHTML= this.status;
+        return square;
+    }
+   
 }
 
 
@@ -163,7 +192,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
 
 
+document.addEventListener("DOMContentLoaded", () => {
 let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5);
+board.render();
+})
+
 })();
 
 /******/ })()

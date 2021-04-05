@@ -33,6 +33,14 @@ class Square {
             this.value = 0;
         }
     }
+
+    render() {
+        let square = document.createElement("div");
+        square.className="square";
+        square.innerHTML= this.status;
+        return square;
+    }
+   
 }
 
 
