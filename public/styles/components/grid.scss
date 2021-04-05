@@ -1,7 +1,37 @@
 .board {
     border: 2px solid black;
     width: fit-content;
-    margin: 0 auto;
+    margin: 100px auto;
+    position: relative;
+    text-align: center;
+    .topNums {
+        color: aquamarine;
+        position: absolute;
+        display: flex;
+        top: -40px;
+
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 25px;
+
+            border: 1px solid transparent;
+        }
+    }
+    .leftNums {
+        left: -30px;
+        color: aquamarine;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        > div {
+            display: flex;
+            justify-content: flex-end;
+            height: 25px;
+            border: 1px solid transparent;
+        }
+    }
     .row-div {
         display: flex;
         .square {
