@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".board {\n  border: 2px solid black;\n  width: fit-content;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n  border: 1px inset black;\n}", "",{"version":3,"sources":["webpack://./public/styles/grid.scss","webpack://./public/styles/index.scss"],"names":[],"mappings":"AAAA;EACI,uBAAA;EACA,kBAAA;ACCJ;ADAI;EACI,aAAA;ACER;ADDQ;EACI,WAAA;EACA,YAAA;EACA,wBAAA;ACGZ;ADDQ;EACI,4BAAA;EACA,uBAAA;ACGZ","sourcesContent":[".board {\n    border: 2px solid black;\n    width: fit-content;\n    .row-div {\n        display: flex;\n        .square {\n            width: 25px;\n            height: 25px;\n            border: 1px outset black;\n        }\n        .unclicked {\n            background-color: aquamarine;\n            border: 1px inset black;\n        }\n    }\n}\n",".board {\n  border: 2px solid black;\n  width: fit-content;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n  border: 1px inset black;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".board {\n  border: 2px solid black;\n  width: fit-content;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n  border: 1px inset black;\n}", "",{"version":3,"sources":["webpack://./public/styles/components/grid.scss","webpack://./public/styles/index.scss"],"names":[],"mappings":"AAAA;EACI,uBAAA;EACA,kBAAA;ACCJ;ADAI;EACI,aAAA;ACER;ADDQ;EACI,WAAA;EACA,YAAA;EACA,wBAAA;ACGZ;ADDQ;EACI,4BAAA;EACA,uBAAA;ACGZ","sourcesContent":[".board {\n    border: 2px solid black;\n    width: fit-content;\n    .row-div {\n        display: flex;\n        .square {\n            width: 25px;\n            height: 25px;\n            border: 1px outset black;\n        }\n        .unclicked {\n            background-color: aquamarine;\n            border: 1px inset black;\n        }\n    }\n}\n",".board {\n  border: 2px solid black;\n  width: fit-content;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n  border: 1px inset black;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -655,6 +655,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/index.scss */ "./public/styles/index.scss");
+
 
 
 

@@ -1,4 +1,5 @@
 import Board from './board';
+
 import '../styles/index.scss';
 
 
