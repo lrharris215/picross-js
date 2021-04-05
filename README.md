@@ -19,4 +19,4 @@
 ## Wireframes
 
 
-![wireframe](https://wireframe.cc/S6rENF)
+![wireframe](./images/wireframe.png)
