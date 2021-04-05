@@ -464,9 +464,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _square__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./square */ "./public/javascripts/square.js");
 
 class Board {
-    constructor(size){
+    constructor(size, topNums, leftNums){
         this.grid = this.makeGrid(size)
         this.populateGrid();
+        this.topNums = topNums;
+        this.leftNums = leftNums;
     }
 
     makeGrid(size) {
@@ -497,6 +499,24 @@ class Board {
             console.log("NO Board")
         }
         else {
+            let topNums = document.createElement("div");
+            let leftNums = document.createElement("div");
+            topNums.className = "topNums";
+            leftNums.className = "leftNums";
+
+            this.topNums.forEach((numArr) => {
+                let nums = document.createElement("div");
+                nums.innerHTML = numArr.join(" ");
+                topNums.append(nums);
+            })
+
+             this.leftNums.forEach((numArr) => {
+                let nums = document.createElement("div");
+                nums.innerHTML = numArr.join(" ");
+                leftNums.append(nums);
+            })
+            board.appendChild(topNums);
+            board.appendChild(leftNums);
             for(let i = 0; i < this.grid.length; i ++){
                 let rowDiv = document.createElement("div");
                 rowDiv.className= "row-div"
@@ -534,8 +554,12 @@ class Square {
         this.status = "unclicked"; // unclicked, filled, exed, maybe
         this.value = 0;
         this.handleClick = this.handleClick.bind(this);
+        this.handleRightClick = this.handleRightClick.bind(this);
+        this.handleMiddleClick = this.handleMiddleClick.bind(this);
         this.square = document.createElement("div");
         this.square.addEventListener('click', () => this.handleClick())
+        this.square.addEventListener('contextmenu', (e) => this.handleRightClick(e))
+        this.square.addEventListener( 'auxclick', (e) => this.handleMiddleClick(e))
 
     }
 
@@ -555,7 +579,8 @@ class Square {
         return;
     }
 
-    handleRightClick() {
+    handleRightClick(e) {
+        e.preventDefault();
         if (this.status === "exed") {
             this.status = "unclicked";
             this.value = 0;
@@ -563,9 +588,13 @@ class Square {
             this.status = "exed"
             this.value = 0;
         }
+        this.render();
+        return;
     }
 
-    handleMiddleClick() {
+    handleMiddleClick(e) {
+        if (e.button !== 1) return;
+
         if (this.status === "maybe") {
             this.status = "unclicked";
             this.value = 0;
@@ -573,6 +602,7 @@ class Square {
             this.status = "maybe";
             this.value = 0;
         }
+        this.render();
     }
 
     render() {
@@ -672,7 +702,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5);
+    let topNums = [[5],[2],[4], [1,1,1],[2]]
+    let leftNums = [[5],[3,1], [1,2], [1,1], [1]]
+let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, topNums, leftNums);
 board.render();
 })
 

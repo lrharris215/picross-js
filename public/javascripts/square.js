@@ -3,8 +3,12 @@ class Square {
         this.status = "unclicked"; // unclicked, filled, exed, maybe
         this.value = 0;
         this.handleClick = this.handleClick.bind(this);
+        this.handleRightClick = this.handleRightClick.bind(this);
+        this.handleMiddleClick = this.handleMiddleClick.bind(this);
         this.square = document.createElement("div");
         this.square.addEventListener('click', () => this.handleClick())
+        this.square.addEventListener('contextmenu', (e) => this.handleRightClick(e))
+        this.square.addEventListener( 'auxclick', (e) => this.handleMiddleClick(e))
 
     }
 
@@ -24,7 +28,8 @@ class Square {
         return;
     }
 
-    handleRightClick() {
+    handleRightClick(e) {
+        e.preventDefault();
         if (this.status === "exed") {
             this.status = "unclicked";
             this.value = 0;
@@ -32,9 +37,13 @@ class Square {
             this.status = "exed"
             this.value = 0;
         }
+        this.render();
+        return;
     }
 
-    handleMiddleClick() {
+    handleMiddleClick(e) {
+        if (e.button !== 1) return;
+
         if (this.status === "maybe") {
             this.status = "unclicked";
             this.value = 0;
@@ -42,6 +51,7 @@ class Square {
             this.status = "maybe";
             this.value = 0;
         }
+        this.render();
     }
 
     render() {
