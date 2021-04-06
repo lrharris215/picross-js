@@ -1,10 +1,10 @@
 import Board from './board';
-import { tutorial, level_one } from './level_list';
+import { tutorial, level_one, level_two } from './level_list';
 
 class Game {
     constructor() {
         this.currentIdx = 0;
-        this.levels = [tutorial, level_one];
+        this.levels = [tutorial, level_one, level_two];
         this.boards = [];
         this.currentLevel = this.levels[this.currentIdx];
         this.currentBoard = this.createNewBoard();

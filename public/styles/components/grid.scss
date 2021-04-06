@@ -30,9 +30,12 @@
             }
         }
         .leftNums {
-            left: -30px;
             color: aquamarine;
             position: absolute;
+
+            left: 0;
+            transform: translate(-105%);
+            // border: 2px solid red;
             display: flex;
             flex-direction: column;
             border: 2px solid transparent;
