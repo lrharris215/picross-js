@@ -791,17 +791,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    let topNums = [[5], [2], [4], [1, 1, 1], [2]];
-    let leftNums = [[5], [3, 1], [1, 2], [1, 1], [1, 1]];
-    let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, topNums, leftNums);
-    board.render();
-
     let level = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, '1111111101101101010010010');
     let row = level.rowVals();
     let col = level.colVals();
-
-    console.log(level.getNums(row));
-    console.log(level.getNums(col));
+    // let topNums = [[5], [2], [4], [1, 1, 1], [2]];
+    // let leftNums = [[5], [3, 1], [1, 2], [1, 1], [1, 1]];
+    let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, level.getNums(col), level.getNums(row));
+    board.render();
 });
 
 })();
