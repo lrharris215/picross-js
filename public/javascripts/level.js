@@ -4,6 +4,10 @@ class Level {
     constructor(size, valueString) {
         this.size = size;
         this.valueString = valueString;
+        this.row = this.rowVals();
+        this.col = this.colVals();
+        this.topNums = this.getNums(this.col);
+        this.leftNums = this.getNums(this.row);
     }
 
     rowVals() {
@@ -64,6 +68,8 @@ class Level {
             }
             if (temp.length > 0) {
                 nums.push(temp);
+            } else if (temp.length === 0) {
+                nums.push([0]);
             }
         }
 

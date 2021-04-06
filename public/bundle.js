@@ -464,78 +464,111 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _square__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./square */ "./public/javascripts/square.js");
 
 class Board {
-    constructor(size, topNums, leftNums){
-        this.grid = this.makeGrid(size)
+    constructor(size, topNums, leftNums) {
+        this.grid = this.makeGrid(size);
         this.populateGrid();
         this.topNums = topNums;
         this.leftNums = leftNums;
     }
 
     makeGrid(size) {
-    
         let grid = [];
-        for(let i = 0; i < size; i ++) {
-            grid.push(new Array(size))
+        for (let i = 0; i < size; i++) {
+            grid.push(new Array(size));
         }
         return grid;
     }
 
-    populateGrid(){
-     
-        for(let i = 0; i < this.grid.length; i++) {
-            for( let j = 0; j < this.grid[i].length; j++){
+    populateGrid() {
+        for (let i = 0; i < this.grid.length; i++) {
+            for (let j = 0; j < this.grid[i].length; j++) {
                 let square = new _square__WEBPACK_IMPORTED_MODULE_0__.default();
-                
+
                 this.grid[i][j] = square;
             }
         }
     }
 
-    render() {
-        let board = document.getElementById("board");
-        board.innerHTML = "";
-        board.className = "board";
-        if (!board) {
-            console.log("NO Board")
+    findCurrentVals() {
+        let vals = [];
+        for (let i = 0; i < this.grid.length; i++) {
+            for (let j = 0; j < this.grid[i].length; j++) {
+                let sq = this.grid[i][j];
+                vals.push(sq.value);
+            }
         }
-        else {
-            let topNums = document.createElement("div");
-            let leftNums = document.createElement("div");
-            topNums.className = "topNums";
-            leftNums.className = "leftNums";
+        return vals.join('');
+    }
+
+    render() {
+        let board = document.getElementById('board');
+        board.innerHTML = '';
+        board.className = 'board';
+        if (!board) {
+            console.log('NO Board');
+        } else {
+            let topNums = document.createElement('div');
+            let leftNums = document.createElement('div');
+            topNums.className = 'topNums';
+            leftNums.className = 'leftNums';
 
             this.topNums.forEach((numArr) => {
-                let nums = document.createElement("div");
-                nums.innerHTML = numArr.join(" ");
+                let nums = document.createElement('div');
+                nums.innerHTML = numArr.join(' ');
                 topNums.append(nums);
-            })
+            });
 
-             this.leftNums.forEach((numArr) => {
-                let nums = document.createElement("div");
-                nums.innerHTML = numArr.join(" ");
+            this.leftNums.forEach((numArr) => {
+                let nums = document.createElement('div');
+                nums.innerHTML = numArr.join(' ');
                 leftNums.append(nums);
-            })
+            });
             board.appendChild(topNums);
             board.appendChild(leftNums);
-            for(let i = 0; i < this.grid.length; i ++){
-                let rowDiv = document.createElement("div");
-                rowDiv.className= "row-div"
-                for(let j = 0; j < this.grid[i].length; j++){
-                    let square = this.grid[i][j]
-                    rowDiv.appendChild(square.render())
-                    
+            for (let i = 0; i < this.grid.length; i++) {
+                let rowDiv = document.createElement('div');
+                rowDiv.className = 'row-div';
+                for (let j = 0; j < this.grid[i].length; j++) {
+                    let square = this.grid[i][j];
+                    rowDiv.appendChild(square.render());
                 }
-           
-                board.appendChild(rowDiv)
+
+                board.appendChild(rowDiv);
             }
-            
-        return board;
+
+            return board;
         }
-        
     }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Board);
+
+
+/***/ }),
+
+/***/ "./public/javascripts/game.js":
+/*!************************************!*\
+  !*** ./public/javascripts/game.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
+/* harmony import */ var _level__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./level */ "./public/javascripts/level.js");
+
+
+
+class Game {
+    constructor() {
+        this.level_one = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, '1111111101101101010010010');
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Game);
+
 
 /***/ }),
 
@@ -556,6 +589,10 @@ class Level {
     constructor(size, valueString) {
         this.size = size;
         this.valueString = valueString;
+        this.row = this.rowVals();
+        this.col = this.colVals();
+        this.topNums = this.getNums(this.col);
+        this.leftNums = this.getNums(this.row);
     }
 
     rowVals() {
@@ -616,6 +653,8 @@ class Level {
             }
             if (temp.length > 0) {
                 nums.push(temp);
+            } else if (temp.length === 0) {
+                nums.push([0]);
             }
         }
 
@@ -786,17 +825,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
 /* harmony import */ var _level__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./level */ "./public/javascripts/level.js");
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/index.scss */ "./public/styles/index.scss");
+/* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./game */ "./public/javascripts/game.js");
 
 
 
 
 document.addEventListener('DOMContentLoaded', () => {
     let level = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, '1111111101101101010010010');
-    let row = level.rowVals();
-    let col = level.colVals();
+    // let row = level.rowVals();
+    // let col = level.colVals();
     // let topNums = [[5], [2], [4], [1, 1, 1], [2]];
     // let leftNums = [[5], [3, 1], [1, 2], [1, 1], [1, 1]];
-    let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, level.getNums(col), level.getNums(row));
+    let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, level.topNums, level.leftNums);
+    console.log(board.findCurrentVals());
     board.render();
 });
 
