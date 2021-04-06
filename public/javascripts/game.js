@@ -53,9 +53,11 @@ class Game {
         if (this.isLevelWon(this.currentBoard)) {
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
             setTimeout(() => {
+                if (this.currentIdx != this.levels.length - 1) {
+                    level_msg.innerHTML = '';
+                }
                 this.incrementCurrentIdx();
                 this.play();
-                level_msg.innerHTML = '';
             }, 3000);
         }
         if (this.isGameOver()) {

@@ -1,15 +1,12 @@
 .message-box {
     color: whitesmoke;
-    border: 1px solid whitesmoke;
+    // border: 1px solid whitesmoke;
+    font-size: 16px;
+    font-family: 'Kiwi Maru';
     width: 300px;
     height: 100px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    #level-msg {
-    }
-    #game-over-msg {
-    }
 }
