@@ -1,14 +1,14 @@
 .board {
-    border: 2px solid black;
     width: fit-content;
     margin: 100px auto 50px auto;
     position: relative;
     text-align: center;
     .topNums {
         color: aquamarine;
-        position: absolute;
+        position: relative;
         display: flex;
-        top: -60px;
+        top: 0;
+        border: 2px solid transparent;
 
         > div {
             display: flex;
@@ -26,6 +26,7 @@
         position: absolute;
         display: flex;
         flex-direction: column;
+        border: 2px solid transparent;
         > div {
             display: flex;
             justify-content: flex-end;
@@ -34,24 +35,27 @@
             border: 1px solid transparent;
         }
     }
-    .row-div {
-        display: flex;
-        .square {
-            width: 25px;
-            height: 25px;
-            border: 1px outset black;
-        }
-        .unclicked {
-            background-color: aquamarine;
-        }
-        .filled {
-            background-color: teal;
-        }
-        .exed {
-            background-color: red;
-        }
-        .maybe {
-            background-color: pink;
+    .grid {
+        border: 2px solid black;
+        .row-div {
+            display: flex;
+            .square {
+                width: 25px;
+                height: 25px;
+                border: 1px outset black;
+            }
+            .unclicked {
+                background-color: aquamarine;
+            }
+            .filled {
+                background-color: teal;
+            }
+            .exed {
+                background-color: red;
+            }
+            .maybe {
+                background-color: pink;
+            }
         }
     }
 }

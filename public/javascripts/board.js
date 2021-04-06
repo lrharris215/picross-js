@@ -61,8 +61,13 @@ class Board {
                 nums.innerHTML = numArr.join(' ');
                 leftNums.append(nums);
             });
+
             board.appendChild(topNums);
             board.appendChild(leftNums);
+
+            let griddiv = document.createElement('div');
+            griddiv.className = 'grid';
+
             for (let i = 0; i < this.grid.length; i++) {
                 let rowDiv = document.createElement('div');
                 rowDiv.className = 'row-div';
@@ -71,8 +76,9 @@ class Board {
                     rowDiv.appendChild(square.render());
                 }
 
-                board.appendChild(rowDiv);
+                griddiv.appendChild(rowDiv);
             }
+            board.appendChild(griddiv);
             board.addEventListener('click', () => this.game.update());
             return board;
         }
