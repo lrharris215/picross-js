@@ -565,9 +565,12 @@ class Level {
         for (let i = 0; i < this.valueString.length; i++) {
             if (temp.length < this.size) {
                 temp.push(this.valueString[i]);
-            } else {
+            }
+            if (temp.length === this.size) {
                 rowsArrays.push(temp);
-                temp = [this.valueString[i]];
+                temp = [];
+            } else if (i === this.valueString.length - 1) {
+                rowsArrays.push(temp);
             }
         }
 
@@ -580,39 +583,43 @@ class Level {
             colsArrays[i] = [];
         }
         let i = 0;
-        debugger;
+
         while (i < this.valueString.length) {
             let idx = i % 5;
             colsArrays[idx].push(this.valueString[i]);
             i++;
         }
-        debugger;
+
         return colsArrays;
     }
 
     getNums(vals) {
         let nums = [];
+
         for (let i = 0; i < vals.length; i++) {
             let temp = [];
             let count = 0;
-            for (let j = 0; j < vals[i].length; i++) {
-                debugger;
-                if (vals[i][j] === 0) {
+
+            for (let j = 0; j < vals[i].length; j++) {
+                if (vals[i][j] === '0') {
                     if (count !== 0) {
                         temp.push(count);
                     }
                     count = 0;
                 }
-                if (vals[i][j] === 1) {
+                if (vals[i][j] === '1') {
                     count += 1;
                 }
-                if (j === vals[i].length - 1 && count !== 0) {
-                    debugger;
-                    temp.push(count);
-                    nums.push(temp);
-                }
+            }
+            if (count !== 0) {
+                temp.push(count);
+            }
+            if (temp.length > 0) {
+                nums.push(temp);
             }
         }
+
+        return nums;
     }
 }
 
@@ -790,8 +797,11 @@ document.addEventListener('DOMContentLoaded', () => {
     board.render();
 
     let level = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, '1111111101101101010010010');
-    level.rowVals();
-    level.colVals();
+    let row = level.rowVals();
+    let col = level.colVals();
+
+    console.log(level.getNums(row));
+    console.log(level.getNums(col));
 });
 
 })();

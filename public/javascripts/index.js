@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     board.render();
 
     let level = new Level(5, '1111111101101101010010010');
-    level.rowVals();
-    level.colVals();
+    let row = level.rowVals();
+    let col = level.colVals();
+
+    console.log(level.getNums(row));
+    console.log(level.getNums(col));
 });
