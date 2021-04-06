@@ -21,7 +21,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  border: 2px solid black;\n  width: fit-content;\n  margin: 100px auto;\n  position: relative;\n  text-align: center;\n}\n.board .topNums {\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  top: -60px;\n}\n.board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n}\n.board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .row-div .filled {\n  background-color: teal;\n}\n.board .row-div .exed {\n  background-color: red;\n}\n.board .row-div .maybe {\n  background-color: pink;\n}", "",{"version":3,"sources":["webpack://./public/styles/main.scss","webpack://./public/styles/index.scss","webpack://./public/styles/components/grid.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,kBAAA;ACCJ;;ADEA;EACI,iBAAA;ACCJ;;ACPA;EACI,uBAAA;EACA,kBAAA;EACA,kBAAA;EACA,kBAAA;EACA,kBAAA;ADUJ;ACTI;EACI,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,UAAA;ADWR;ACTQ;EACI,aAAA;EACA,sBAAA;EACA,yBAAA;EACA,WAAA;EACA,cAAA;EAEA,6BAAA;ADUZ;ACPI;EACI,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;ADSR;ACRQ;EACI,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,YAAA;EACA,6BAAA;ADUZ;ACPI;EACI,aAAA;ADSR;ACRQ;EACI,WAAA;EACA,YAAA;EACA,wBAAA;ADUZ;ACRQ;EACI,4BAAA;ADUZ;ACRQ;EACI,sBAAA;ADUZ;ACRQ;EACI,qBAAA;ADUZ;ACRQ;EACI,sBAAA;ADUZ","sourcesContent":["body {\n    background-color: navy;\n    text-align: center;\n}\n\nh1 {\n    color: aquamarine;\n}\n","body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  border: 2px solid black;\n  width: fit-content;\n  margin: 100px auto;\n  position: relative;\n  text-align: center;\n}\n.board .topNums {\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  top: -60px;\n}\n.board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n}\n.board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .row-div .filled {\n  background-color: teal;\n}\n.board .row-div .exed {\n  background-color: red;\n}\n.board .row-div .maybe {\n  background-color: pink;\n}",".board {\n    border: 2px solid black;\n    width: fit-content;\n    margin: 100px auto;\n    position: relative;\n    text-align: center;\n    .topNums {\n        color: aquamarine;\n        position: absolute;\n        display: flex;\n        top: -60px;\n\n        > div {\n            display: flex;\n            flex-direction: column;\n            justify-content: flex-end;\n            width: 15px;\n            padding: 0 5px;\n\n            border: 1px solid transparent;\n        }\n    }\n    .leftNums {\n        left: -30px;\n        color: aquamarine;\n        position: absolute;\n        display: flex;\n        flex-direction: column;\n        > div {\n            display: flex;\n            justify-content: flex-end;\n            align-items: center;\n            height: 25px;\n            border: 1px solid transparent;\n        }\n    }\n    .row-div {\n        display: flex;\n        .square {\n            width: 25px;\n            height: 25px;\n            border: 1px outset black;\n        }\n        .unclicked {\n            background-color: aquamarine;\n        }\n        .filled {\n            background-color: teal;\n        }\n        .exed {\n            background-color: red;\n        }\n        .maybe {\n            background-color: pink;\n        }\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  border: 2px solid black;\n  width: fit-content;\n  margin: 100px auto 50px auto;\n  position: relative;\n  text-align: center;\n}\n.board .topNums {\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  top: -60px;\n}\n.board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n}\n.board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .row-div .filled {\n  background-color: teal;\n}\n.board .row-div .exed {\n  background-color: red;\n}\n.board .row-div .maybe {\n  background-color: pink;\n}\n\n.message-box {\n  color: whitesmoke;\n  border: 1px solid whitesmoke;\n  width: 300px;\n  height: 100px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}", "",{"version":3,"sources":["webpack://./public/styles/main.scss","webpack://./public/styles/index.scss","webpack://./public/styles/components/grid.scss","webpack://./public/styles/components/message_box.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,kBAAA;ACCJ;;ADEA;EACI,iBAAA;ACCJ;;ACPA;EACI,uBAAA;EACA,kBAAA;EACA,4BAAA;EACA,kBAAA;EACA,kBAAA;ADUJ;ACTI;EACI,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,UAAA;ADWR;ACTQ;EACI,aAAA;EACA,sBAAA;EACA,yBAAA;EACA,WAAA;EACA,cAAA;EAEA,6BAAA;ADUZ;ACPI;EACI,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;ADSR;ACRQ;EACI,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,YAAA;EACA,6BAAA;ADUZ;ACPI;EACI,aAAA;ADSR;ACRQ;EACI,WAAA;EACA,YAAA;EACA,wBAAA;ADUZ;ACRQ;EACI,4BAAA;ADUZ;ACRQ;EACI,sBAAA;ADUZ;ACRQ;EACI,qBAAA;ADUZ;ACRQ;EACI,sBAAA;ADUZ;;AE/DA;EACI,iBAAA;EACA,4BAAA;EACA,YAAA;EACA,aAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;AFkEJ","sourcesContent":["body {\n    background-color: navy;\n    text-align: center;\n}\n\nh1 {\n    color: aquamarine;\n}\n","body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  border: 2px solid black;\n  width: fit-content;\n  margin: 100px auto 50px auto;\n  position: relative;\n  text-align: center;\n}\n.board .topNums {\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  top: -60px;\n}\n.board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n}\n.board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board .row-div {\n  display: flex;\n}\n.board .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .row-div .filled {\n  background-color: teal;\n}\n.board .row-div .exed {\n  background-color: red;\n}\n.board .row-div .maybe {\n  background-color: pink;\n}\n\n.message-box {\n  color: whitesmoke;\n  border: 1px solid whitesmoke;\n  width: 300px;\n  height: 100px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}",".board {\n    border: 2px solid black;\n    width: fit-content;\n    margin: 100px auto 50px auto;\n    position: relative;\n    text-align: center;\n    .topNums {\n        color: aquamarine;\n        position: absolute;\n        display: flex;\n        top: -60px;\n\n        > div {\n            display: flex;\n            flex-direction: column;\n            justify-content: flex-end;\n            width: 15px;\n            padding: 0 5px;\n\n            border: 1px solid transparent;\n        }\n    }\n    .leftNums {\n        left: -30px;\n        color: aquamarine;\n        position: absolute;\n        display: flex;\n        flex-direction: column;\n        > div {\n            display: flex;\n            justify-content: flex-end;\n            align-items: center;\n            height: 25px;\n            border: 1px solid transparent;\n        }\n    }\n    .row-div {\n        display: flex;\n        .square {\n            width: 25px;\n            height: 25px;\n            border: 1px outset black;\n        }\n        .unclicked {\n            background-color: aquamarine;\n        }\n        .filled {\n            background-color: teal;\n        }\n        .exed {\n            background-color: red;\n        }\n        .maybe {\n            background-color: pink;\n        }\n    }\n}\n",".message-box {\n    color: whitesmoke;\n    border: 1px solid whitesmoke;\n    width: 300px;\n    height: 100px;\n    margin: 0 auto;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    #level-msg {\n    }\n    #game-over-msg {\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -464,9 +464,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _square__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./square */ "./public/javascripts/square.js");
 
 class Board {
-    constructor(size, topNums, leftNums) {
+    constructor(game, size, topNums, leftNums) {
+        this.game = game;
         this.grid = this.makeGrid(size);
         this.populateGrid();
+
         this.topNums = topNums;
         this.leftNums = leftNums;
     }
@@ -535,7 +537,7 @@ class Board {
 
                 board.appendChild(rowDiv);
             }
-            board.addEventListener('click', () => console.log('baord'));
+            board.addEventListener('click', () => this.game.update());
             return board;
         }
     }
@@ -557,13 +559,71 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
-/* harmony import */ var _level__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./level */ "./public/javascripts/level.js");
+/* harmony import */ var _level_list__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./level_list */ "./public/javascripts/level_list.js");
 
 
 
 class Game {
     constructor() {
-        this.level_one = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, '1111111101101101010010010');
+        this.currentIdx = 0;
+        this.levels = [_level_list__WEBPACK_IMPORTED_MODULE_1__.level_one];
+        this.boards = [];
+        this.currentLevel = this.levels[this.currentIdx];
+        this.currentBoard = this.createNewBoard();
+
+        this.boards.push(this.currentBoard);
+
+        this.gameOver = false;
+    }
+
+    isLevelWon(board) {
+        if (this.currentLevel.valueString === board.findCurrentVals()) {
+            this.currentLevel.won = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    isGameOver() {
+        if (this.levels.every((level) => level.won === true)) {
+            this.gameOver = true;
+            return true;
+        } else {
+            return false;
+        }
+    }
+    createNewBoard() {
+        let b = new _board__WEBPACK_IMPORTED_MODULE_0__.default(this, this.currentLevel.size, this.currentLevel.topNums, this.currentLevel.leftNums);
+        return b;
+    }
+    incrementCurrentIdx() {
+        if (this.currentIdx + 1 < this.levels.length - 1) {
+            this.currentIdx += 1;
+            this.currentLevel = levels[this.currentIdx];
+            this.currentBoard = this.createNewBoard();
+            this.boards.push(this.currentBoard);
+        } else {
+            this.gameOver = true;
+        }
+    }
+    update() {
+        let level_msg = document.getElementById('level-msg');
+        let game_over_msg = document.getElementById('game-over-msg');
+        this.incrementCurrentIdx();
+
+        console.log(`board ${this.currentBoard.findCurrentVals()}`);
+        console.log(`level ${this.currentLevel.valueString}`);
+        if (this.isLevelWon(this.currentBoard)) {
+            level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
+        }
+        if (this.isGameOver()) {
+            game_over_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';
+        }
+    }
+
+    play() {
+        this.currentBoard.render();
     }
 }
 
@@ -593,6 +653,7 @@ class Level {
         this.col = this.colVals();
         this.topNums = this.getNums(this.col);
         this.leftNums = this.getNums(this.row);
+        this.won = false;
     }
 
     rowVals() {
@@ -663,6 +724,24 @@ class Level {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Level);
+
+
+/***/ }),
+
+/***/ "./public/javascripts/level_list.js":
+/*!******************************************!*\
+  !*** ./public/javascripts/level_list.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "level_one": () => (/* binding */ level_one)
+/* harmony export */ });
+/* harmony import */ var _level__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./level */ "./public/javascripts/level.js");
+
+
+const level_one = new _level__WEBPACK_IMPORTED_MODULE_0__.default(5, '1111111101101101010010010');
 
 
 /***/ }),
@@ -836,9 +915,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // let col = level.colVals();
     // let topNums = [[5], [2], [4], [1, 1, 1], [2]];
     // let leftNums = [[5], [3, 1], [1, 2], [1, 1], [1, 1]];
-    let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, level.topNums, level.leftNums);
-    console.log(board.findCurrentVals());
-    board.render();
+    // let board = new Board(5, level.topNums, level.leftNums);
+
+    // board.render();
+
+    const g = new _game__WEBPACK_IMPORTED_MODULE_3__.default();
+    g.play();
 });
 
 })();

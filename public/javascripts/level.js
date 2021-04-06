@@ -8,6 +8,7 @@ class Level {
         this.col = this.colVals();
         this.topNums = this.getNums(this.col);
         this.leftNums = this.getNums(this.row);
+        this.won = false;
     }
 
     rowVals() {

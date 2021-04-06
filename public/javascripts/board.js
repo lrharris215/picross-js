@@ -1,8 +1,10 @@
 import Square from './square';
 class Board {
-    constructor(size, topNums, leftNums) {
+    constructor(game, size, topNums, leftNums) {
+        this.game = game;
         this.grid = this.makeGrid(size);
         this.populateGrid();
+
         this.topNums = topNums;
         this.leftNums = leftNums;
     }
@@ -71,7 +73,7 @@ class Board {
 
                 board.appendChild(rowDiv);
             }
-            board.addEventListener('click', () => console.log('baord'));
+            board.addEventListener('click', () => this.game.update());
             return board;
         }
     }
