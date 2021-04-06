@@ -12,6 +12,7 @@
   "devDependencies": {
     "@webpack-cli/init": "^1.1.3",
     "css-loader": "^5.2.0",
+    "prettier": "^2.2.1",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",

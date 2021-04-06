@@ -523,7 +523,7 @@ class Board {
                 for(let j = 0; j < this.grid[i].length; j++){
                     let square = this.grid[i][j]
                     rowDiv.appendChild(square.render())
-                    console.log(this.grid[i][j])
+                    
                 }
            
                 board.appendChild(rowDiv)
@@ -536,6 +536,88 @@ class Board {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Board);
+
+/***/ }),
+
+/***/ "./public/javascripts/level.js":
+/*!*************************************!*\
+  !*** ./public/javascripts/level.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
+
+
+class Level {
+    constructor(size, valueString) {
+        this.size = size;
+        this.valueString = valueString;
+    }
+
+    rowVals() {
+        let rowsArrays = [];
+
+        let temp = [];
+        for (let i = 0; i < this.valueString.length; i++) {
+            if (temp.length < this.size) {
+                temp.push(this.valueString[i]);
+            } else {
+                rowsArrays.push(temp);
+                temp = [this.valueString[i]];
+            }
+        }
+
+        return rowsArrays;
+    }
+
+    colVals() {
+        let colsArrays = new Array(this.size);
+        for (let i = 0; i < colsArrays.length; i++) {
+            colsArrays[i] = [];
+        }
+        debugger;
+        for (let i = 0; i < this.valueString.length; i++) {
+            for (let j = 0; j < this.size; j++) {
+                debugger;
+                colsArrays[j].push(this.valueString[i]);
+            }
+        }
+        debugger;
+        return colsArrays;
+    }
+
+    getNums(vals) {
+        let nums = [];
+        for (let i = 0; i < vals.length; i++) {
+            let temp = [];
+            let count = 0;
+            for (let j = 0; j < vals[i].length; i++) {
+                debugger;
+                if (vals[i][j] === 0) {
+                    if (count !== 0) {
+                        temp.push(count);
+                    }
+                    count = 0;
+                }
+                if (vals[i][j] === 1) {
+                    count += 1;
+                }
+                if (j === vals[i].length - 1 && count !== 0) {
+                    debugger;
+                    temp.push(count);
+                    nums.push(temp);
+                }
+            }
+        }
+    }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Level);
+
 
 /***/ }),
 
@@ -695,7 +777,8 @@ var __webpack_exports__ = {};
   \*************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _board__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./board */ "./public/javascripts/board.js");
-/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../styles/index.scss */ "./public/styles/index.scss");
+/* harmony import */ var _level__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./level */ "./public/javascripts/level.js");
+/* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/index.scss */ "./public/styles/index.scss");
 
 
 
@@ -706,6 +789,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let leftNums = [[5],[3,1], [1,2], [1,1], [1,1]]
 let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, topNums, leftNums);
 board.render();
+
+let level = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, "1111111101101101010010010");
+level.rowVals();
 })
 
 })();

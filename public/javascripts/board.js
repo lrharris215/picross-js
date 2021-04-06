@@ -59,7 +59,7 @@ class Board {
                 for(let j = 0; j < this.grid[i].length; j++){
                     let square = this.grid[i][j]
                     rowDiv.appendChild(square.render())
-                    console.log(this.grid[i][j])
+                    
                 }
            
                 board.appendChild(rowDiv)
