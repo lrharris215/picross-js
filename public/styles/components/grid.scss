@@ -1,60 +1,70 @@
-.board {
+.board-container {
+    background-color: $mountain-blue;
+    border-radius: 20%;
     width: fit-content;
-    margin: 100px auto 50px auto;
-    position: relative;
-    text-align: center;
-    .topNums {
-        color: aquamarine;
+    padding: 0 50px;
+    margin: 0 auto;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    .board {
+        width: fit-content;
+        margin: 0 auto;
         position: relative;
-        display: flex;
-        top: 0;
-        border: 2px solid transparent;
+        text-align: center;
+        .topNums {
+            color: aquamarine;
+            position: relative;
+            display: flex;
+            top: 0;
+            border: 2px solid transparent;
 
-        > div {
+            > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                width: 15px;
+                padding: 0 5px;
+
+                border: 1px solid transparent;
+            }
+        }
+        .leftNums {
+            left: -30px;
+            color: aquamarine;
+            position: absolute;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            width: 15px;
-            padding: 0 5px;
-
-            border: 1px solid transparent;
-        }
-    }
-    .leftNums {
-        left: -30px;
-        color: aquamarine;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        border: 2px solid transparent;
-        > div {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            height: 25px;
-            border: 1px solid transparent;
-        }
-    }
-    .grid {
-        border: 2px solid black;
-        .row-div {
-            display: flex;
-            .square {
-                width: 25px;
+            border: 2px solid transparent;
+            > div {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 height: 25px;
-                border: 1px outset black;
+                border: 1px solid transparent;
             }
-            .unclicked {
-                background-color: aquamarine;
-            }
-            .filled {
-                background-color: teal;
-            }
-            .exed {
-                background-color: red;
-            }
-            .maybe {
-                background-color: pink;
+        }
+        .grid {
+            border: 2px solid black;
+            .row-div {
+                display: flex;
+                .square {
+                    width: 25px;
+                    height: 25px;
+                    border: 1px outset black;
+                }
+                .unclicked {
+                    background-color: aquamarine;
+                }
+                .filled {
+                    background-color: teal;
+                }
+                .exed {
+                    background-color: red;
+                }
+                .maybe {
+                    background-color: pink;
+                }
             }
         }
     }

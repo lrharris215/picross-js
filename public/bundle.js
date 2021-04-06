@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./public/styles/index.scss":
-/*!***************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./public/styles/index.scss ***!
-  \***************************************************************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js!./public/styles/index.scss":
+/*!**********************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js!./public/styles/index.scss ***!
+  \**********************************************************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -16,12 +16,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _images_mountain_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../images/mountain.jpg */ "./public/images/mountain.jpg");
 // Imports
 
 
+
+
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(_images_mountain_jpg__WEBPACK_IMPORTED_MODULE_3__.default);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  width: fit-content;\n  margin: 100px auto 50px auto;\n  position: relative;\n  text-align: center;\n}\n.board .topNums {\n  color: aquamarine;\n  position: relative;\n  display: flex;\n  top: 0;\n  border: 2px solid transparent;\n}\n.board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  border: 2px solid transparent;\n}\n.board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board .grid {\n  border: 2px solid black;\n}\n.board .grid .row-div {\n  display: flex;\n}\n.board .grid .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .grid .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .grid .row-div .filled {\n  background-color: teal;\n}\n.board .grid .row-div .exed {\n  background-color: red;\n}\n.board .grid .row-div .maybe {\n  background-color: pink;\n}\n\n.message-box {\n  color: whitesmoke;\n  border: 1px solid whitesmoke;\n  width: 300px;\n  height: 100px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}", "",{"version":3,"sources":["webpack://./public/styles/main.scss","webpack://./public/styles/index.scss","webpack://./public/styles/components/grid.scss","webpack://./public/styles/components/message_box.scss"],"names":[],"mappings":"AAAA;EACI,sBAAA;EACA,kBAAA;ACCJ;;ADEA;EACI,iBAAA;ACCJ;;ACPA;EACI,kBAAA;EACA,4BAAA;EACA,kBAAA;EACA,kBAAA;ADUJ;ACTI;EACI,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,MAAA;EACA,6BAAA;ADWR;ACTQ;EACI,aAAA;EACA,sBAAA;EACA,yBAAA;EACA,WAAA;EACA,cAAA;EAEA,6BAAA;ADUZ;ACPI;EACI,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;ADSR;ACRQ;EACI,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,YAAA;EACA,6BAAA;ADUZ;ACPI;EACI,uBAAA;ADSR;ACRQ;EACI,aAAA;ADUZ;ACTY;EACI,WAAA;EACA,YAAA;EACA,wBAAA;ADWhB;ACTY;EACI,4BAAA;ADWhB;ACTY;EACI,sBAAA;ADWhB;ACTY;EACI,qBAAA;ADWhB;ACTY;EACI,sBAAA;ADWhB;;AEnEA;EACI,iBAAA;EACA,4BAAA;EACA,YAAA;EACA,aAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;AFsEJ","sourcesContent":["body {\n    background-color: navy;\n    text-align: center;\n}\n\nh1 {\n    color: aquamarine;\n}\n","body {\n  background-color: navy;\n  text-align: center;\n}\n\nh1 {\n  color: aquamarine;\n}\n\n.board {\n  width: fit-content;\n  margin: 100px auto 50px auto;\n  position: relative;\n  text-align: center;\n}\n.board .topNums {\n  color: aquamarine;\n  position: relative;\n  display: flex;\n  top: 0;\n  border: 2px solid transparent;\n}\n.board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  border: 2px solid transparent;\n}\n.board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board .grid {\n  border: 2px solid black;\n}\n.board .grid .row-div {\n  display: flex;\n}\n.board .grid .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board .grid .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board .grid .row-div .filled {\n  background-color: teal;\n}\n.board .grid .row-div .exed {\n  background-color: red;\n}\n.board .grid .row-div .maybe {\n  background-color: pink;\n}\n\n.message-box {\n  color: whitesmoke;\n  border: 1px solid whitesmoke;\n  width: 300px;\n  height: 100px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}",".board {\n    width: fit-content;\n    margin: 100px auto 50px auto;\n    position: relative;\n    text-align: center;\n    .topNums {\n        color: aquamarine;\n        position: relative;\n        display: flex;\n        top: 0;\n        border: 2px solid transparent;\n\n        > div {\n            display: flex;\n            flex-direction: column;\n            justify-content: flex-end;\n            width: 15px;\n            padding: 0 5px;\n\n            border: 1px solid transparent;\n        }\n    }\n    .leftNums {\n        left: -30px;\n        color: aquamarine;\n        position: absolute;\n        display: flex;\n        flex-direction: column;\n        border: 2px solid transparent;\n        > div {\n            display: flex;\n            justify-content: flex-end;\n            align-items: center;\n            height: 25px;\n            border: 1px solid transparent;\n        }\n    }\n    .grid {\n        border: 2px solid black;\n        .row-div {\n            display: flex;\n            .square {\n                width: 25px;\n                height: 25px;\n                border: 1px outset black;\n            }\n            .unclicked {\n                background-color: aquamarine;\n            }\n            .filled {\n                background-color: teal;\n            }\n            .exed {\n                background-color: red;\n            }\n            .maybe {\n                background-color: pink;\n            }\n        }\n    }\n}\n",".message-box {\n    color: whitesmoke;\n    border: 1px solid whitesmoke;\n    width: 300px;\n    height: 100px;\n    margin: 0 auto;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    #level-msg {\n    }\n    #game-over-msg {\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\n  background-size: cover;\n  background-position: center;\n  text-align: center;\n}\nbody .main-content {\n  border: 1px solid white;\n}\n\nh1 {\n  color: #2f4a62;\n}\n\n.board-container {\n  background-color: #5481bd;\n  border-radius: 20%;\n  width: fit-content;\n  padding: 0 50px;\n  margin: 0 auto;\n  min-height: 300px;\n  display: flex;\n  align-items: center;\n}\n.board-container .board {\n  width: fit-content;\n  margin: 0 auto;\n  position: relative;\n  text-align: center;\n}\n.board-container .board .topNums {\n  color: aquamarine;\n  position: relative;\n  display: flex;\n  top: 0;\n  border: 2px solid transparent;\n}\n.board-container .board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board-container .board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  border: 2px solid transparent;\n}\n.board-container .board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board-container .board .grid {\n  border: 2px solid black;\n}\n.board-container .board .grid .row-div {\n  display: flex;\n}\n.board-container .board .grid .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board-container .board .grid .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board-container .board .grid .row-div .filled {\n  background-color: teal;\n}\n.board-container .board .grid .row-div .exed {\n  background-color: red;\n}\n.board-container .board .grid .row-div .maybe {\n  background-color: pink;\n}\n\n.message-box {\n  color: whitesmoke;\n  border: 1px solid whitesmoke;\n  width: 300px;\n  height: 100px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}", "",{"version":3,"sources":["webpack://./main.scss","webpack://./index.scss","webpack://./colors.scss","webpack://./components/grid.scss","webpack://./components/message_box.scss"],"names":[],"mappings":"AAAA;EACI,yDAAA;EACA,sBAAA;EACA,2BAAA;EACA,kBAAA;ACCJ;ADCI;EACI,uBAAA;ACCR;;ADGA;EACI,cEZK;ADYT;;AEZA;EACI,yBAAA;EACA,kBAAA;EACA,kBAAA;EACA,eAAA;EACA,cAAA;EACA,iBAAA;EACA,aAAA;EACA,mBAAA;AFeJ;AEdI;EACI,kBAAA;EACA,cAAA;EACA,kBAAA;EACA,kBAAA;AFgBR;AEfQ;EACI,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,MAAA;EACA,6BAAA;AFiBZ;AEfY;EACI,aAAA;EACA,sBAAA;EACA,yBAAA;EACA,WAAA;EACA,cAAA;EAEA,6BAAA;AFgBhB;AEbQ;EACI,WAAA;EACA,iBAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,6BAAA;AFeZ;AEdY;EACI,aAAA;EACA,yBAAA;EACA,mBAAA;EACA,YAAA;EACA,6BAAA;AFgBhB;AEbQ;EACI,uBAAA;AFeZ;AEdY;EACI,aAAA;AFgBhB;AEfgB;EACI,WAAA;EACA,YAAA;EACA,wBAAA;AFiBpB;AEfgB;EACI,4BAAA;AFiBpB;AEfgB;EACI,sBAAA;AFiBpB;AEfgB;EACI,qBAAA;AFiBpB;AEfgB;EACI,sBAAA;AFiBpB;;AGlFA;EACI,iBAAA;EACA,4BAAA;EACA,YAAA;EACA,aAAA;EACA,cAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;AHqFJ","sourcesContent":["body {\n    background-image: url(../images/mountain.jpg);\n    background-size: cover;\n    background-position: center;\n    text-align: center;\n\n    .main-content {\n        border: 1px solid white;\n    }\n}\n\nh1 {\n    color: $header;\n}\n","body {\n  background-image: url(../images/mountain.jpg);\n  background-size: cover;\n  background-position: center;\n  text-align: center;\n}\nbody .main-content {\n  border: 1px solid white;\n}\n\nh1 {\n  color: #2f4a62;\n}\n\n.board-container {\n  background-color: #5481bd;\n  border-radius: 20%;\n  width: fit-content;\n  padding: 0 50px;\n  margin: 0 auto;\n  min-height: 300px;\n  display: flex;\n  align-items: center;\n}\n.board-container .board {\n  width: fit-content;\n  margin: 0 auto;\n  position: relative;\n  text-align: center;\n}\n.board-container .board .topNums {\n  color: aquamarine;\n  position: relative;\n  display: flex;\n  top: 0;\n  border: 2px solid transparent;\n}\n.board-container .board .topNums > div {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-end;\n  width: 15px;\n  padding: 0 5px;\n  border: 1px solid transparent;\n}\n.board-container .board .leftNums {\n  left: -30px;\n  color: aquamarine;\n  position: absolute;\n  display: flex;\n  flex-direction: column;\n  border: 2px solid transparent;\n}\n.board-container .board .leftNums > div {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  height: 25px;\n  border: 1px solid transparent;\n}\n.board-container .board .grid {\n  border: 2px solid black;\n}\n.board-container .board .grid .row-div {\n  display: flex;\n}\n.board-container .board .grid .row-div .square {\n  width: 25px;\n  height: 25px;\n  border: 1px outset black;\n}\n.board-container .board .grid .row-div .unclicked {\n  background-color: aquamarine;\n}\n.board-container .board .grid .row-div .filled {\n  background-color: teal;\n}\n.board-container .board .grid .row-div .exed {\n  background-color: red;\n}\n.board-container .board .grid .row-div .maybe {\n  background-color: pink;\n}\n\n.message-box {\n  color: whitesmoke;\n  border: 1px solid whitesmoke;\n  width: 300px;\n  height: 100px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}","$header: rgb(47, 74, 98);\n$mountain-blue: rgb(84, 129, 189);\n",".board-container {\n    background-color: $mountain-blue;\n    border-radius: 20%;\n    width: fit-content;\n    padding: 0 50px;\n    margin: 0 auto;\n    min-height: 300px;\n    display: flex;\n    align-items: center;\n    .board {\n        width: fit-content;\n        margin: 0 auto;\n        position: relative;\n        text-align: center;\n        .topNums {\n            color: aquamarine;\n            position: relative;\n            display: flex;\n            top: 0;\n            border: 2px solid transparent;\n\n            > div {\n                display: flex;\n                flex-direction: column;\n                justify-content: flex-end;\n                width: 15px;\n                padding: 0 5px;\n\n                border: 1px solid transparent;\n            }\n        }\n        .leftNums {\n            left: -30px;\n            color: aquamarine;\n            position: absolute;\n            display: flex;\n            flex-direction: column;\n            border: 2px solid transparent;\n            > div {\n                display: flex;\n                justify-content: flex-end;\n                align-items: center;\n                height: 25px;\n                border: 1px solid transparent;\n            }\n        }\n        .grid {\n            border: 2px solid black;\n            .row-div {\n                display: flex;\n                .square {\n                    width: 25px;\n                    height: 25px;\n                    border: 1px outset black;\n                }\n                .unclicked {\n                    background-color: aquamarine;\n                }\n                .filled {\n                    background-color: teal;\n                }\n                .exed {\n                    background-color: red;\n                }\n                .maybe {\n                    background-color: pink;\n                }\n            }\n        }\n    }\n}\n",".message-box {\n    color: whitesmoke;\n    border: 1px solid whitesmoke;\n    width: 300px;\n    height: 100px;\n    margin: 0 auto;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n\n    #level-msg {\n    }\n    #game-over-msg {\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -144,6 +150,63 @@ module.exports = function cssWithMappingToString(item) {
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    // eslint-disable-next-line no-param-reassign
+    options = {};
+  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
+
+
+  url = url && url.__esModule ? url.default : url;
+
+  if (typeof url !== "string") {
+    return url;
+  } // If url is already wrapped in quotes, remove them
+
+
+  if (/^['"].*['"]$/.test(url)) {
+    // eslint-disable-next-line no-param-reassign
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    // eslint-disable-next-line no-param-reassign
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
+};
+
+/***/ }),
+
+/***/ "./public/images/mountain.jpg":
+/*!************************************!*\
+  !*** ./public/images/mountain.jpg ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__webpack_require__.p + "1fc76eda1f7e68c7b85ce473cbfe5bb6.jpg");
+
+/***/ }),
+
 /***/ "./public/styles/index.scss":
 /*!**********************************!*\
   !*** ./public/styles/index.scss ***!
@@ -156,7 +219,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./index.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./public/styles/index.scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_resolve_url_loader_index_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!../../node_modules/resolve-url-loader/index.js!../../node_modules/sass-loader/dist/cjs.js!./index.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/resolve-url-loader/index.js!./node_modules/sass-loader/dist/cjs.js!./public/styles/index.scss");
 
             
 
@@ -165,11 +228,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_resolve_url_loader_index_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_resolve_url_loader_index_js_node_modules_sass_loader_dist_cjs_js_index_scss__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -623,6 +686,7 @@ class Game {
             setTimeout(() => {
                 this.incrementCurrentIdx();
                 this.play();
+                level_msg.innerHTML = '';
             }, 3000);
         }
         if (this.isGameOver()) {
@@ -889,6 +953,18 @@ class Square {
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -903,6 +979,26 @@ class Square {
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/

@@ -55,6 +55,7 @@ class Game {
             setTimeout(() => {
                 this.incrementCurrentIdx();
                 this.play();
+                level_msg.innerHTML = '';
             }, 3000);
         }
         if (this.isGameOver()) {

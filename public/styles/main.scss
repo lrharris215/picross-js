@@ -1,8 +1,14 @@
 body {
-    background-color: navy;
+    background-image: url(../images/mountain.jpg);
+    background-size: cover;
+    background-position: center;
     text-align: center;
+
+    .main-content {
+        border: 1px solid white;
+    }
 }
 
 h1 {
-    color: aquamarine;
+    color: $header;
 }
