@@ -1,5 +1,6 @@
 .board-container {
     background-color: $mountain-blue;
+    box-shadow: 2px 2px 2px $header;
     border-radius: 20%;
     width: fit-content;
     padding: 0 50px;
@@ -63,10 +64,16 @@
                     background-color: teal;
                 }
                 .exed {
-                    background-color: red;
+                    background-color: aquamarine;
+                    background-image: url(../../images/X.png);
+                    background-position: center;
+                    background-size: cover;
                 }
                 .maybe {
-                    background-color: pink;
+                    background-color: aquamarine;
+                    background-image: url(../../images/question_mark.png);
+                    background-position: center;
+                    background-size: cover;
                 }
             }
         }

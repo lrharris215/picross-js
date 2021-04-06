@@ -9,4 +9,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .hidden {
+        display: none;
+    }
+    .active {
+        display: inline-block;
+    }
+    #restart {
+        color: white;
+        &:visited {
+            color: white;
+        }
+    }
 }

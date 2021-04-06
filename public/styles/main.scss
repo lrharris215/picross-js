@@ -8,6 +8,15 @@ body {
     justify-content: space-between;
 
     .footer {
-        align-self: flex-start;
+        display: flex;
+        justify-content: flex-end;
+        .link-box {
+            color: $header;
+            font-size: 36px;
+            margin-right: 40px;
+            a:visited {
+                color: $header;
+            }
+        }
     }
 }

@@ -41,3 +41,11 @@
 ## Bonus Features
 
 -   A narrative
+
+## Sources
+
+-   Background provided by <a href='https://www.freepik.com/vectors/background'>Background vector created by vectorpocket - www.freepik.com</a>
+-   X is from http://clipart-library.com/clipart/gie5B478T.htm
+-   Question mark from https://www.cleanpng.com/png-question-mark-pink-magenta-clip-art-color-question-1388903/download-png.html
+-   icons from fontawesome
+    https://fontawesome.com/icons/github-square?style=brands

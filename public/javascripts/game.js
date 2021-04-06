@@ -61,12 +61,21 @@ class Game {
         }
         if (this.isGameOver()) {
             level_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';
+            let restart = document.getElementById('restart');
+            restart.className = 'active';
         }
     }
 
     play() {
         this.currentBoard.render();
     }
+
+    // restart() {
+    //     this.currentIdx = 0;
+    //     this.currentLevel = this.levels[this.currentIdx];
+    //     this.currentBoard = this.createNewBoard();
+    //     this.play();
+    // }
 }
 
 export default Game;
