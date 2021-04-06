@@ -3,12 +3,14 @@ body {
     background-size: cover;
     background-position: center;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     .main-content {
         border: 1px solid white;
     }
-}
-
-h1 {
-    color: $header;
+    .footer {
+        align-self: flex-start;
+    }
 }

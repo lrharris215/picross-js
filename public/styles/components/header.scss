@@ -1,0 +1,22 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    h1 {
+        color: $header;
+    }
+    .instructions-box {
+        align-self: flex-end;
+        width: 400px;
+
+        display: flex;
+        justify-content: center;
+        .instructions-button {
+            background-color: $cloud-pink;
+            color: $header;
+            width: fit-content;
+            border: 2px outset $cloud-pink;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    }
+}
