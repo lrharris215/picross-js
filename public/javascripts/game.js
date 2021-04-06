@@ -1,13 +1,14 @@
 import Board from './board';
-import { level_one } from './level_list';
+import { tutorial, level_one } from './level_list';
 
 class Game {
     constructor() {
         this.currentIdx = 0;
-        this.levels = [level_one];
+        this.levels = [tutorial, level_one];
         this.boards = [];
         this.currentLevel = this.levels[this.currentIdx];
         this.currentBoard = this.createNewBoard();
+        this.incrementCurrentIdx = this.incrementCurrentIdx.bind(this);
 
         this.boards.push(this.currentBoard);
 
@@ -36,9 +37,9 @@ class Game {
         return b;
     }
     incrementCurrentIdx() {
-        if (this.currentIdx + 1 < this.levels.length - 1) {
+        if (this.currentIdx + 1 < this.levels.length) {
             this.currentIdx += 1;
-            this.currentLevel = levels[this.currentIdx];
+            this.currentLevel = this.levels[this.currentIdx];
             this.currentBoard = this.createNewBoard();
             this.boards.push(this.currentBoard);
         } else {
@@ -48,12 +49,13 @@ class Game {
     update() {
         let level_msg = document.getElementById('level-msg');
         let game_over_msg = document.getElementById('game-over-msg');
-        this.incrementCurrentIdx();
 
-        console.log(`board ${this.currentBoard.findCurrentVals()}`);
-        console.log(`level ${this.currentLevel.valueString}`);
         if (this.isLevelWon(this.currentBoard)) {
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
+            setTimeout(() => {
+                this.incrementCurrentIdx();
+                this.play();
+            }, 3000);
         }
         if (this.isGameOver()) {
             game_over_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';

@@ -38,7 +38,8 @@ class Level {
         let i = 0;
 
         while (i < this.valueString.length) {
-            let idx = i % 5;
+            let idx = i % this.size;
+
             colsArrays[idx].push(this.valueString[i]);
             i++;
         }

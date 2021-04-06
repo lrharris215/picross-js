@@ -566,10 +566,11 @@ __webpack_require__.r(__webpack_exports__);
 class Game {
     constructor() {
         this.currentIdx = 0;
-        this.levels = [_level_list__WEBPACK_IMPORTED_MODULE_1__.level_one];
+        this.levels = [_level_list__WEBPACK_IMPORTED_MODULE_1__.tutorial, _level_list__WEBPACK_IMPORTED_MODULE_1__.level_one];
         this.boards = [];
         this.currentLevel = this.levels[this.currentIdx];
         this.currentBoard = this.createNewBoard();
+        this.incrementCurrentIdx = this.incrementCurrentIdx.bind(this);
 
         this.boards.push(this.currentBoard);
 
@@ -598,9 +599,9 @@ class Game {
         return b;
     }
     incrementCurrentIdx() {
-        if (this.currentIdx + 1 < this.levels.length - 1) {
+        if (this.currentIdx + 1 < this.levels.length) {
             this.currentIdx += 1;
-            this.currentLevel = levels[this.currentIdx];
+            this.currentLevel = this.levels[this.currentIdx];
             this.currentBoard = this.createNewBoard();
             this.boards.push(this.currentBoard);
         } else {
@@ -610,12 +611,13 @@ class Game {
     update() {
         let level_msg = document.getElementById('level-msg');
         let game_over_msg = document.getElementById('game-over-msg');
-        this.incrementCurrentIdx();
 
-        console.log(`board ${this.currentBoard.findCurrentVals()}`);
-        console.log(`level ${this.currentLevel.valueString}`);
         if (this.isLevelWon(this.currentBoard)) {
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
+            setTimeout(() => {
+                this.incrementCurrentIdx();
+                this.play();
+            }, 3000);
         }
         if (this.isGameOver()) {
             game_over_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';
@@ -683,7 +685,8 @@ class Level {
         let i = 0;
 
         while (i < this.valueString.length) {
-            let idx = i % 5;
+            let idx = i % this.size;
+
             colsArrays[idx].push(this.valueString[i]);
             i++;
         }
@@ -736,12 +739,15 @@ class Level {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "level_one": () => (/* binding */ level_one)
+/* harmony export */   "level_one": () => (/* binding */ level_one),
+/* harmony export */   "tutorial": () => (/* binding */ tutorial)
 /* harmony export */ });
 /* harmony import */ var _level__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./level */ "./public/javascripts/level.js");
 
 
 const level_one = new _level__WEBPACK_IMPORTED_MODULE_0__.default(5, '1111111101101101010010010');
+
+const tutorial = new _level__WEBPACK_IMPORTED_MODULE_0__.default(3, '111100101');
 
 
 /***/ }),
