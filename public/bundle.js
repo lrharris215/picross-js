@@ -579,12 +579,12 @@ class Level {
         for (let i = 0; i < colsArrays.length; i++) {
             colsArrays[i] = [];
         }
+        let i = 0;
         debugger;
-        for (let i = 0; i < this.valueString.length; i++) {
-            for (let j = 0; j < this.size; j++) {
-                debugger;
-                colsArrays[j].push(this.valueString[i]);
-            }
+        while (i < this.valueString.length) {
+            let idx = i % 5;
+            colsArrays[idx].push(this.valueString[i]);
+            i++;
         }
         debugger;
         return colsArrays;
@@ -783,16 +783,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    let topNums = [[5], [2], [4], [1, 1, 1], [2]];
+    let leftNums = [[5], [3, 1], [1, 2], [1, 1], [1, 1]];
+    let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, topNums, leftNums);
+    board.render();
 
-document.addEventListener("DOMContentLoaded", () => {
-    let topNums = [[5],[2],[4], [1,1,1],[2]]
-    let leftNums = [[5],[3,1], [1,2], [1,1], [1,1]]
-let board = new _board__WEBPACK_IMPORTED_MODULE_0__.default(5, topNums, leftNums);
-board.render();
-
-let level = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, "1111111101101101010010010");
-level.rowVals();
-})
+    let level = new _level__WEBPACK_IMPORTED_MODULE_1__.default(5, '1111111101101101010010010');
+    level.rowVals();
+    level.colVals();
+});
 
 })();
 

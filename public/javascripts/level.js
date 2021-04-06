@@ -27,12 +27,12 @@ class Level {
         for (let i = 0; i < colsArrays.length; i++) {
             colsArrays[i] = [];
         }
+        let i = 0;
         debugger;
-        for (let i = 0; i < this.valueString.length; i++) {
-            for (let j = 0; j < this.size; j++) {
-                debugger;
-                colsArrays[j].push(this.valueString[i]);
-            }
+        while (i < this.valueString.length) {
+            let idx = i % 5;
+            colsArrays[idx].push(this.valueString[i]);
+            i++;
         }
         debugger;
         return colsArrays;
