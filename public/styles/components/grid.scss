@@ -8,13 +8,14 @@
         color: aquamarine;
         position: absolute;
         display: flex;
-        top: -40px;
+        top: -60px;
 
         > div {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            width: 25px;
+            width: 15px;
+            padding: 0 5px;
 
             border: 1px solid transparent;
         }
@@ -28,6 +29,7 @@
         > div {
             display: flex;
             justify-content: flex-end;
+            align-items: center;
             height: 25px;
             border: 1px solid transparent;
         }
