@@ -535,7 +535,7 @@ class Board {
 
                 board.appendChild(rowDiv);
             }
-
+            board.addEventListener('click', () => console.log('baord'));
             return board;
         }
     }
