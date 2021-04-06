@@ -679,7 +679,6 @@ class Game {
     }
     update() {
         let level_msg = document.getElementById('level-msg');
-        let game_over_msg = document.getElementById('game-over-msg');
 
         if (this.isLevelWon(this.currentBoard)) {
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
@@ -692,7 +691,7 @@ class Game {
             }, 3000);
         }
         if (this.isGameOver()) {
-            game_over_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';
+            level_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';
         }
     }
 
