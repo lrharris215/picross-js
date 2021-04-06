@@ -2,9 +2,21 @@
     display: flex;
     flex-direction: column;
     h1 {
+        font-family: 'Kiwi Maru';
+        // font-family: 'Baloo 2';
+        // font-family: 'Fredericka the Great';
+        // font-family: 'Skranji';
+        // font-family: 'Unkempt';
         color: $header;
+        background-color: whitesmoke;
+        width: fit-content;
+        border-radius: 5px;
+        align-self: center;
+        padding: 0 5px;
+        box-shadow: 2px 2px 2px $header;
     }
     .instructions-box {
+        font-family: 'Baloo 2';
         align-self: flex-end;
         width: 400px;
 
@@ -27,6 +39,17 @@
             position: absolute;
             background-color: $cloud-pink;
             top: 50px;
+            text-align: left;
+            border-radius: 5px;
+            box-shadow: 2px 2px 2px $header;
+            ul {
+                padding: 0 10px;
+                margin: 10px 20px;
+            }
+            p {
+                padding: 0 10px;
+                margin: 10px 20px;
+            }
         }
         .hidden {
             display: none;

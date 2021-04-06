@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Picross</title>
     <script type="text/javascript" src="./public/bundle.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Skranji&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Unkempt&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -15,7 +21,13 @@
         <div class="instructions-box">
             <div class="instructions-button" id="instructions-button">Instructions</div>
             <div class="hidden" id='instructions-detail'>
-                woofwoofwoof things go here
+                <ul>
+                    <li>Left click to fill in a square</li>
+                    <li>Right click to mark a square as empty</li>
+                    <li>The numbers on the side and top tell you how many squares in that row or column are filled in</li>
+                    <li>Numbers separated by a space mean that there is at least one empty square between the sets of filled in blocks</li>
+                </ul>
+                <p>*hint* If the number is the same size as the grid, the whole row or column can be filled in!</p>
             </div>
             </div>
         </div>
