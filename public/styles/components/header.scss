@@ -10,6 +10,7 @@
 
         display: flex;
         justify-content: center;
+        position: relative;
         .instructions-button {
             background-color: $cloud-pink;
             color: $header;
@@ -17,6 +18,24 @@
             border: 2px outset $cloud-pink;
             padding: 5px;
             border-radius: 5px;
+            box-shadow: 2px 2px 2px $header;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+        #instructions-detail {
+            position: absolute;
+            background-color: $cloud-pink;
+            top: 50px;
+        }
+        .hidden {
+            display: none;
+            height: 0;
+            width: 400px;
+        }
+        .active {
+            display: block;
+            height: fit-content;
         }
     }
 }
