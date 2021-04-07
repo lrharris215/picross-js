@@ -23,7 +23,7 @@ class Timer {
         }
     }
     render() {
-        const timer = document.getElementById('timer');
+        const timer = document.getElementById('total-timer');
 
         timer.innerHTML = `${this.hours}:${this.minutes}:${this.seconds}`;
     }

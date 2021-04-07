@@ -1,5 +1,6 @@
 import Board from './board';
 import Timer from './timer';
+import LevelTimer from './level_timer';
 import { tutorial, level_one, level_two } from './level_list';
 
 class Game {
@@ -10,11 +11,12 @@ class Game {
         this.currentLevel = this.levels[this.currentIdx];
         this.currentBoard = this.createNewBoard();
         this.incrementCurrentIdx = this.incrementCurrentIdx.bind(this);
-        this.timer = new Timer();
+        this.totalTimer = new Timer();
         this.boards.push(this.currentBoard);
-
+        this.levelTimer = new LevelTimer();
         this.gameOver = false;
-        this.timer.start();
+        this.totalTimer.start();
+        this.levelTimer.start();
     }
 
     isLevelWon(board) {
@@ -50,19 +52,27 @@ class Game {
     }
     update() {
         let level_msg = document.getElementById('level-msg');
+        let time_msg = document.getElementById('time-msg');
 
         if (this.isLevelWon(this.currentBoard)) {
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
+            this.levelTimer.render();
+            this.levelTimer.end();
+            time_msg.className = 'active';
+
             setTimeout(() => {
                 if (this.currentIdx != this.levels.length - 1) {
                     level_msg.innerHTML = '';
+                    time_msg.className = 'hidden';
+                    this.levelTimer.reset();
+                    this.levelTimer.start();
                 }
                 this.incrementCurrentIdx();
                 this.play();
             }, 3000);
         }
         if (this.isGameOver()) {
-            this.timer.end();
+            this.totalTimer.end();
 
             level_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';
             let restart = document.getElementById('restart');

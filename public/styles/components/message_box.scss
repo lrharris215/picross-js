@@ -37,12 +37,16 @@
             border: 3px dotted whitesmoke;
             border-radius: 5px;
 
-            #timer {
+            #total-timer {
                 padding: 0.5em;
             }
         }
     }
-
+    #level-msg {
+        p {
+            margin: 10px 0;
+        }
+    }
     .hidden {
         display: none;
     }
