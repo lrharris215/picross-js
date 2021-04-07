@@ -20,6 +20,23 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleInstructions();
     });
 
+    const completedPuzzlesButton = document.getElementById('completed-puzzles-button');
+    const completedPuzzlesDetail = document.getElementById('completed-puzzles-detail');
+
+    const toggleCompletedPuzzles = () => {
+        if (completedPuzzlesDetail.className === 'active') {
+            completedPuzzlesDetail.className = 'hidden';
+            completedPuzzlesButton.className = 'unpressed';
+        } else {
+            completedPuzzlesDetail.className = 'active';
+            completedPuzzlesButton.className = 'pressed';
+        }
+    };
+
+    completedPuzzlesButton.addEventListener('click', () => {
+        toggleCompletedPuzzles();
+    });
+
     const g = new Game();
     g.play();
 });

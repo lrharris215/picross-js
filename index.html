@@ -16,19 +16,32 @@
     
     <div id="root">
         <div class="header">
-        <h1>Picross!</h1>
-        <div class="instructions-box">
-            <div class="unpressed" id="instructions-button">Instructions</div>
-            <div class="hidden" id='instructions-detail'>
-                <ul>
-                    <li>Left-click to fill in a square.</li>
-                    <li>Right-click to mark a square as empty.</li>
-                    <li>Unsure? Use middle-click to mark a square as a maybe!</li>
-                    <li>The numbers on the side and top tell you how many squares in that row or column are filled in.</li>
-                    <li>Numbers separated by a space mean that there is at least one empty square between the sets of filled in blocks.</li>
-                </ul>
-                <p> <span>*hint*</span> If the number is the same size as the grid, the whole row or column can be filled in!</p>
-            </div>
+            <h1>Picross!</h1>
+            <div class="nav-bar">
+                <div class="left-nav">
+                    <div class="completed-puzzles-box">
+                        <div class ="unpressed" id='completed-puzzles-button'>Inventory</div>
+                        <div id='completed-puzzles-detail' class="hidden">
+                            <div class="unsolved" id='tutorial'></div>
+                            <div class="unsolved" id='level-one'></div>
+                            <div class="unsolved" id='level-two'></div>
+                            <div class="unsolved" id='level-three'></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="instructions-box">
+                    <div class="unpressed" id="instructions-button">Instructions</div>
+                    <div class="hidden" id='instructions-detail'>
+                        <ul>
+                            <li>Left-click to fill in a square.</li>
+                            <li>Right-click to mark a square as empty.</li>
+                            <li>Unsure? Use middle-click to mark a square as a maybe!</li>
+                            <li>The numbers on the side and top tell you how many squares in that row or column are filled in.</li>
+                            <li>Numbers separated by a space mean that there is at least one empty square between the sets of filled in blocks.</li>
+                        </ul>
+                        <p> <span>*hint*</span> If the number is the same size as the grid, the whole row or column can be filled in!</p>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="main-content">

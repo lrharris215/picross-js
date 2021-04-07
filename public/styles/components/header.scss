@@ -16,61 +16,126 @@
         border: 2px outset whitesmoke;
         box-shadow: 0.2rem 0.2rem 0.2rem $header;
     }
-    .instructions-box {
-        font-family: 'Baloo 2';
-        align-self: flex-end;
-        width: 40%;
-        z-index: 10;
+    .nav-bar {
         display: flex;
-        justify-content: center;
-        position: relative;
-        #instructions-button {
-            font-weight: 600;
-            background-color: $cloud-pink;
-            color: $header;
-            width: fit-content;
-            border: 2px outset $cloud-pink;
-            padding: 0.5rem;
-            border-radius: 5px;
-            box-shadow: 0.2rem 0.2rem 0.2rem $header;
-            &:hover {
-                cursor: pointer;
-            }
-        }
-        #instructions-button.unpressed {
-            border-style: outset;
-        }
-        #instructions-button.pressed {
-            border-style: inset;
-        }
-        #instructions-detail {
-            position: absolute;
-            background-color: $cloud-pink;
-            top: 4rem;
-            width: 80%;
-            text-align: left;
-            border-radius: 5px;
-            box-shadow: 2px 2px 2px $header;
-            ul {
-                padding: 0 1rem;
-                margin: 1rem 2rem;
-            }
-            p {
-                padding: 0 1rem;
-                margin: 1rem 2rem;
-                span {
+        border: 1px solid red;
+        font-family: 'Baloo 2';
+        justify-content: space-between;
+        .left-nav {
+            width: 40%;
+            border: 1px solid yellow;
+            display: flex;
+            justify-content: center;
+            .completed-puzzles-box {
+                border: 1px solid purple;
+                position: relative;
+                z-index: 10;
+                width: 100%;
+                justify-content: center;
+                display: flex;
+                #completed-puzzles-button {
                     font-weight: 600;
+                    background-color: $cloud-pink;
+                    color: $header;
+                    width: fit-content;
+                    border: 2px outset $cloud-pink;
+                    padding: 0.5rem;
+                    border-radius: 5px;
+                    box-shadow: 0.2rem 0.2rem 0.2rem $header;
+                }
+                #completed-puzzles-button.unpressed {
+                    border-style: outset;
+                }
+                #completed-puzzles-button.pressed {
+                    border-style: inset;
+                }
+                #completed-puzzles-detail {
+                    position: absolute;
+                    background-color: $cloud-pink;
+                    top: 4rem;
+                    width: 80%;
+                    text-align: left;
+                    border-radius: 5px;
+                    box-shadow: 2px 2px 2px $header;
+                    display: flex;
+                    .unsolved {
+                        margin: 2rem;
+                        width: 4rem;
+                        height: 4rem;
+                        background-color: grey;
+                        background-image: url(../../images/question_mark.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
+                    #tutorial.solved {
+                        background-image: url(../../images/tutorial.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
+                }
+                .hidden {
+                    display: none;
+                }
+                .active {
+                    display: block;
                 }
             }
         }
-        .hidden {
-            display: none;
-            height: 0;
-            width: 400px;
-        }
-        .active {
-            display: block;
-            height: fit-content;
+        .instructions-box {
+            width: 40%;
+            border: 1px solid yellow;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            #instructions-button {
+                font-weight: 600;
+                background-color: $cloud-pink;
+                color: $header;
+                width: fit-content;
+                border: 2px outset $cloud-pink;
+                padding: 0.5rem;
+                border-radius: 5px;
+                box-shadow: 0.2rem 0.2rem 0.2rem $header;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            #instructions-button.unpressed {
+                border-style: outset;
+            }
+            #instructions-button.pressed {
+                border-style: inset;
+            }
+            #instructions-detail {
+                position: absolute;
+                background-color: $cloud-pink;
+                top: 4rem;
+                width: 80%;
+                text-align: left;
+                border-radius: 5px;
+                box-shadow: 2px 2px 2px $header;
+                ul {
+                    padding: 0 1rem;
+                    margin: 1rem 2rem;
+                }
+                p {
+                    padding: 0 1rem;
+                    margin: 1rem 2rem;
+                    span {
+                        font-weight: 600;
+                    }
+                }
+            }
+            .hidden {
+                display: none;
+                height: 0;
+                width: 400px;
+            }
+            .active {
+                display: block;
+                height: fit-content;
+            }
         }
     }
 }
