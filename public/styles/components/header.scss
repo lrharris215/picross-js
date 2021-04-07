@@ -57,6 +57,7 @@
                     border-radius: 5px;
                     box-shadow: 2px 2px 2px $header;
                     display: flex;
+                    flex-wrap: wrap;
                     .solved {
                         margin: 2rem;
                         width: 4rem;
