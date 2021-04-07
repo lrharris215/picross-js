@@ -10,8 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleInstructions = () => {
         if (instructionDetail.className === 'active') {
             instructionDetail.className = 'hidden';
+            instructionButton.className = 'unpressed';
         } else {
             instructionDetail.className = 'active';
+            instructionButton.className = 'pressed';
         }
     };
     instructionButton.addEventListener('click', () => {

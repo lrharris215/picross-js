@@ -24,7 +24,7 @@
         display: flex;
         justify-content: center;
         position: relative;
-        .instructions-button {
+        #instructions-button {
             font-weight: 600;
             background-color: $cloud-pink;
             color: $header;
@@ -36,6 +36,12 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+        #instructions-button.unpressed {
+            border-style: outset;
+        }
+        #instructions-button.pressed {
+            border-style: inset;
         }
         #instructions-detail {
             position: absolute;
