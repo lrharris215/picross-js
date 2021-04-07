@@ -722,6 +722,7 @@ class Game {
         let time_msg = document.getElementById('time-msg');
 
         if (this.isLevelWon(this.currentBoard)) {
+            this.totalTimer.end();
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
             this.levelTimer.render();
             this.levelTimer.end();
@@ -731,6 +732,7 @@ class Game {
                 if (this.currentIdx != this.levels.length - 1) {
                     level_msg.innerHTML = '';
                     time_msg.className = 'hidden';
+                    this.totalTimer.start();
                     this.levelTimer.reset();
                     this.levelTimer.start();
                 }
