@@ -51,12 +51,26 @@
         }
         .grid {
             border: 2px solid black;
+            margin-bottom: 2em;
+
             .row-div {
+                &:nth-child(5n + 0) {
+                    border-bottom: 2px solid black;
+                }
+                &:last-child {
+                    border-bottom: none;
+                }
                 display: flex;
                 .square {
                     width: 2rem;
                     height: 2rem;
                     border: 1px outset black;
+                    &:nth-child(5n + 0) {
+                        border-right: 3px solid black;
+                    }
+                    &:last-child {
+                        border-right: 1px outset black;
+                    }
                 }
                 .unclicked {
                     background-color: aquamarine;
