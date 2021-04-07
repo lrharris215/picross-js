@@ -3,7 +3,7 @@
 ## Background and Overview
 
 -   Picross, also known as Nonograms, is a puzzle game that uses numbers to form a picture on a grid. Along the top and left sides of the grid are a series of numbers that let you know how many blocks are filled in and how those blocks are spaced. By combining the information given from the rows and columns, players can fill in the grid to form a picture.  
-    ![picross_example](./public/images/picross_example.png)
+    ![picross_example](./public/images/picross-example.png)
 
 ## Functionality and MVPS
 
