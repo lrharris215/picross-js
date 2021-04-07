@@ -15,12 +15,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    .timer-box {
-        padding: 0.5em;
-        border: 3px dotted whitesmoke;
-        border-radius: 5px;
-        #timer {
-            // padding: 0.5em;
+    .outer-timer-box {
+        display: flex;
+        align-items: center;
+        .pause-box {
+            padding: 0.5em;
+            border: 3px dotted whitesmoke;
+            margin-left: 0.5em;
+            border-radius: 5px;
+            &:hover {
+                cursor: pointer;
+                background-color: whitesmoke;
+                color: $header;
+            }
+            .pause {
+                padding: 0.5em;
+            }
+        }
+        .timer-box {
+            padding: 0.5em;
+            border: 3px dotted whitesmoke;
+            border-radius: 5px;
+
+            #timer {
+                padding: 0.5em;
+            }
         }
     }
 
