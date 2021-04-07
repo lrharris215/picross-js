@@ -1,9 +1,10 @@
 .board-container {
     background-color: $mountain-blue;
     box-shadow: 2px 2px 2px $header;
+
     border-radius: 20%;
     width: fit-content;
-    padding: 0 4em;
+    padding: 0 6em;
     margin: 0 auto;
     min-height: 20em;
     display: flex;
@@ -52,7 +53,6 @@
         .grid {
             border: 2px solid black;
             margin-bottom: 2em;
-
             .row-div {
                 &:nth-child(5n + 0) {
                     border-bottom: 2px solid black;
