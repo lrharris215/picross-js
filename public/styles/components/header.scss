@@ -109,6 +109,21 @@
                         background-size: 4rem 4rem;
                         background-position: center;
                     }
+                    #level_five.solved {
+                        background-image: url(../../images/level_five.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
+                    #level_six.solved {
+                        background-image: url(../../images/level_six.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
+                    #level_seven.solved {
+                        background-image: url(../../images/level_seven.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
                 }
                 #completed-puzzles-detail.hidden {
                     display: none;

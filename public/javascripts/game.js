@@ -1,12 +1,12 @@
 import Board from './board';
 import Timer from './timer';
 import LevelTimer from './level_timer';
-import { tutorial, level_one, level_two, level_three, level_four } from './level_list';
+import { tutorial, level_one, level_two, level_three, level_four, level_five } from './level_list';
 
 class Game {
     constructor() {
         this.currentIdx = 0;
-        this.levels = [tutorial, level_one, level_two, level_three, level_four];
+        this.levels = [tutorial, level_one, level_two, level_three, level_four, level_five];
         this.boards = [];
         this.currentLevel = this.levels[this.currentIdx];
         this.currentBoard = this.createNewBoard();
