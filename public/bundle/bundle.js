@@ -1006,12 +1006,12 @@ class Timer {
     }
     togglePause() {
         if (!this.intervalId) {
-            const modal = document.getElementById(board - modal);
+            const modal = document.getElementById('board-modal');
             modal.className = 'hidden';
             this.start();
         } else {
             this.end();
-            const modal = document.getElementById(board - modal);
+            const modal = document.getElementById('board-modal');
             modal.className = 'active';
         }
     }
