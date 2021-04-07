@@ -13,6 +13,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .timer-box {
+        padding: 0.5em;
+        border: 3px dotted whitesmoke;
+        border-radius: 5px;
+        #timer {
+            // padding: 0.5em;
+        }
+    }
+
     .hidden {
         display: none;
     }

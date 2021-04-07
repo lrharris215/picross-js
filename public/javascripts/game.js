@@ -1,4 +1,5 @@
 import Board from './board';
+import Timer from './timer';
 import { tutorial, level_one, level_two } from './level_list';
 
 class Game {
@@ -9,10 +10,11 @@ class Game {
         this.currentLevel = this.levels[this.currentIdx];
         this.currentBoard = this.createNewBoard();
         this.incrementCurrentIdx = this.incrementCurrentIdx.bind(this);
-
+        this.timer = new Timer();
         this.boards.push(this.currentBoard);
 
         this.gameOver = false;
+        this.timer.start();
     }
 
     isLevelWon(board) {
@@ -60,6 +62,8 @@ class Game {
             }, 3000);
         }
         if (this.isGameOver()) {
+            this.timer.end();
+
             level_msg.innerHTML = '<p>Congratulations, you beat the game!</p>';
             let restart = document.getElementById('restart');
             restart.className = 'active';
