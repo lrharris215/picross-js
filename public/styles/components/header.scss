@@ -124,6 +124,11 @@
                         background-size: 4rem 4rem;
                         background-position: center;
                     }
+                    #level_eight.solved {
+                        background-image: url(../../images/level_eight.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
                 }
                 #completed-puzzles-detail.hidden {
                     display: none;
