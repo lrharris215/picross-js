@@ -75,16 +75,25 @@
                         background-image: url(../../images/tutorial.png);
                         background-size: 4rem 4rem;
                         background-position: center;
+                        &:hover {
+                            filter: brightness(120%);
+                        }
                     }
                     #level_one.solved {
                         background-image: url(../../images/level_1.png);
                         background-size: 4rem 4rem;
                         background-position: center;
+                        &:hover {
+                            filter: brightness(120%);
+                        }
                     }
                     #level_two.solved {
                         background-image: url(../../images/level_2.png);
                         background-size: 4rem 4rem;
                         background-position: center;
+                        &:hover {
+                            filter: brightness(120%);
+                        }
                     }
                 }
                 #completed-puzzles-detail.hidden {
