@@ -65,6 +65,9 @@
                     width: 2rem;
                     height: 2rem;
                     border: 1px outset black;
+                    &:hover {
+                        filter: brightness(120%);
+                    }
                     &:nth-child(5n + 0) {
                         border-right: 3px solid black;
                     }
