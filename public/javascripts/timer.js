@@ -5,6 +5,10 @@ class Timer {
         this.hours = 0;
         this.intervalId;
         this.tick = this.tick.bind(this);
+        this.pause = document.getElementById('pause');
+        this.pause.addEventListener('click', () => {
+            this.togglePause();
+        });
     }
 
     tick() {
@@ -20,6 +24,7 @@ class Timer {
     }
     render() {
         const timer = document.getElementById('timer');
+
         timer.innerHTML = `${this.hours}:${this.minutes}:${this.seconds}`;
     }
 
@@ -31,6 +36,18 @@ class Timer {
     }
     end() {
         clearInterval(this.intervalId);
+        this.intervalId = null;
+    }
+    togglePause() {
+        if (!this.intervalId) {
+            const modal = document.getElementById(board - modal);
+            modal.className = 'hidden';
+            this.start();
+        } else {
+            this.end();
+            const modal = document.getElementById(board - modal);
+            modal.className = 'active';
+        }
     }
 }
 
