@@ -7,6 +7,7 @@ class Board {
 
         this.topNums = topNums;
         this.leftNums = leftNums;
+        this.board = document.getElementById('board');
     }
 
     makeGrid(size) {
@@ -39,10 +40,9 @@ class Board {
     }
 
     render() {
-        let board = document.getElementById('board');
-        board.innerHTML = '';
-        board.className = 'board';
-        if (!board) {
+        this.board.innerHTML = '';
+        this.board.className = 'board';
+        if (!this.board) {
             console.log('NO Board');
         } else {
             let topNums = document.createElement('div');
@@ -62,8 +62,8 @@ class Board {
                 leftNums.append(nums);
             });
 
-            board.appendChild(topNums);
-            board.appendChild(leftNums);
+            this.board.appendChild(topNums);
+            this.board.appendChild(leftNums);
 
             let griddiv = document.createElement('div');
             griddiv.className = 'grid';
@@ -78,9 +78,9 @@ class Board {
 
                 griddiv.appendChild(rowDiv);
             }
-            board.appendChild(griddiv);
-            board.addEventListener('click', () => this.game.update());
-            return board;
+            this.board.appendChild(griddiv);
+
+            return this.board;
         }
     }
 }

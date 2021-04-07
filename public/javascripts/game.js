@@ -1,12 +1,12 @@
 import Board from './board';
 import Timer from './timer';
 import LevelTimer from './level_timer';
-import { tutorial, level_one, level_two, level_three } from './level_list';
+import { tutorial, level_one, level_two, level_three, level_four } from './level_list';
 
 class Game {
     constructor() {
         this.currentIdx = 0;
-        this.levels = [level_three, tutorial, level_one, level_two];
+        this.levels = [tutorial, level_one, level_two, level_three, level_four];
         this.boards = [];
         this.currentLevel = this.levels[this.currentIdx];
         this.currentBoard = this.createNewBoard();
@@ -17,6 +17,9 @@ class Game {
         this.gameOver = false;
         this.totalTimer.start();
         this.levelTimer.start();
+        this.boardDiv = document.getElementById('board');
+        this.boardDiv.addEventListener('click', () => this.update());
+        debugger;
     }
 
     isLevelWon(board) {
@@ -46,6 +49,7 @@ class Game {
             this.currentLevel = this.levels[this.currentIdx];
             this.currentBoard = this.createNewBoard();
             this.boards.push(this.currentBoard);
+            debugger;
         } else {
             this.gameOver = true;
         }
@@ -56,7 +60,7 @@ class Game {
 
         if (this.isLevelWon(this.currentBoard)) {
             this.currentLevel.revealPicture();
-
+            debugger;
             this.totalTimer.end();
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
             this.levelTimer.render();
@@ -72,6 +76,7 @@ class Game {
                     this.levelTimer.start();
                 }
                 this.incrementCurrentIdx();
+                debugger;
                 this.play();
             }, 3000);
         }

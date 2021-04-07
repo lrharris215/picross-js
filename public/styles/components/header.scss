@@ -99,6 +99,16 @@
                             filter: brightness(120%);
                         }
                     }
+                    #level_three.solved {
+                        background-image: url(../../images/level_three.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
+                    #level_four.solved {
+                        background-image: url(../../images/level_four.png);
+                        background-size: 4rem 4rem;
+                        background-position: center;
+                    }
                 }
                 #completed-puzzles-detail.hidden {
                     display: none;
