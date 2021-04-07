@@ -55,6 +55,8 @@ class Game {
         let time_msg = document.getElementById('time-msg');
 
         if (this.isLevelWon(this.currentBoard)) {
+            this.currentLevel.revealPicture();
+
             this.totalTimer.end();
             level_msg.innerHTML = '<p>Congratulations, you won the level!</p>';
             this.levelTimer.render();

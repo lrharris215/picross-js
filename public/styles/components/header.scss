@@ -18,16 +18,15 @@
     }
     .nav-bar {
         display: flex;
-        border: 1px solid red;
+
         font-family: 'Baloo 2';
         justify-content: space-between;
         .left-nav {
             width: 40%;
-            border: 1px solid yellow;
+
             display: flex;
             justify-content: center;
             .completed-puzzles-box {
-                border: 1px solid purple;
                 position: relative;
                 z-index: 10;
                 width: 100%;
@@ -58,6 +57,11 @@
                     border-radius: 5px;
                     box-shadow: 2px 2px 2px $header;
                     display: flex;
+                    .solved {
+                        margin: 2rem;
+                        width: 4rem;
+                        height: 4rem;
+                    }
                     .unsolved {
                         margin: 2rem;
                         width: 4rem;
@@ -73,17 +77,17 @@
                         background-position: center;
                     }
                 }
-                .hidden {
+                #completed-puzzles-detail.hidden {
                     display: none;
                 }
-                .active {
-                    display: block;
+                #completed-puzzles-detail.active {
+                    display: flex;
                 }
             }
         }
         .instructions-box {
             width: 40%;
-            border: 1px solid yellow;
+
             z-index: 10;
             display: flex;
             justify-content: center;

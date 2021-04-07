@@ -1,7 +1,8 @@
 import Board from './board';
 
 class Level {
-    constructor(size, valueString) {
+    constructor(name, size, valueString) {
+        this.name = name;
         this.size = size;
         this.valueString = valueString;
         this.row = this.rowVals();
@@ -76,6 +77,11 @@ class Level {
         }
 
         return nums;
+    }
+
+    revealPicture() {
+        let pic = document.getElementById(`${this.name}`);
+        pic.className = 'solved';
     }
 }
 
