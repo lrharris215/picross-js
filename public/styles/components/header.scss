@@ -62,6 +62,7 @@
                         margin: 2rem;
                         width: 4rem;
                         height: 4rem;
+                        border: 1px solid black;
                     }
                     .unsolved {
                         margin: 2rem;
@@ -76,6 +77,7 @@
                         background-image: url(../../images/tutorial.png);
                         background-size: 4rem 4rem;
                         background-position: center;
+                        border-bottom: none;
                         &:hover {
                             filter: brightness(120%);
                         }
