@@ -814,6 +814,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _square__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./square */ "./public/javascripts/square.js");
+
 const makeMouseChangeButtons = () => {
     const cursorButton = document.getElementById('cursor-button');
     const xButton = document.getElementById('x-button');
@@ -821,17 +823,26 @@ const makeMouseChangeButtons = () => {
 
     cursorButton.addEventListener('click', () => {
         const squares = document.getElementsByClassName('square');
-        debugger;
+
         if (cursorButton.className === 'pressed') {
             return;
         } else if (cursorButton.className === 'unpressed') {
             cursorButton.className = 'pressed';
             xButton.className = 'unpressed';
             maybeButton.className = 'unpressed';
+
+            for (let i = 0; i < squares.length; i++) {
+                let square = squares[i];
+                square.removeEventListener('click', square.handleRightClick);
+                square.removeEventListener('click', square.handleMiddleClick);
+                square.addEventListener('click', square.handleClick);
+            }
         }
     });
 
     xButton.addEventListener('click', () => {
+        const squares = document.getElementsByClassName('square');
+
         if (xButton.className === 'pressed') {
             xButton.className = 'unpressed';
             cursorButton.className = 'pressed';
@@ -840,10 +851,20 @@ const makeMouseChangeButtons = () => {
             xButton.className = 'pressed';
             cursorButton.className = 'unpressed';
             maybeButton.className = 'unpressed';
+
+            for (let i = 0; i < squares.length; i++) {
+                let square = squares[i];
+                debugger;
+                square.removeEventListener('click', square.handleClick);
+                square.removeEventListener('click', square.handleMiddleClick);
+                square.addEventListener('click', square.handleRightClick);
+            }
         }
     });
 
     maybeButton.addEventListener('click', () => {
+        const squares = document.getElementsByClassName('square');
+
         if (maybeButton.className === 'pressed') {
             maybeButton.className = 'unpressed';
             cursorButton.className = 'pressed';
@@ -1205,28 +1226,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 class Square {
     constructor() {
-        this.status = "unclicked"; // unclicked, filled, exed, maybe
+        this.status = 'unclicked'; // unclicked, filled, exed, maybe
         this.value = 0;
         this.handleClick = this.handleClick.bind(this);
         this.handleRightClick = this.handleRightClick.bind(this);
         this.handleMiddleClick = this.handleMiddleClick.bind(this);
-        this.square = document.createElement("div");
-        this.square.addEventListener('click', () => this.handleClick())
-        this.square.addEventListener('contextmenu', (e) => this.handleRightClick(e))
-        this.square.addEventListener( 'auxclick', (e) => this.handleMiddleClick(e))
-
+        this.square = document.createElement('div');
+        this.square.addEventListener('click', this.handleClick);
+        this.square.addEventListener('contextmenu', this.handleRightClick);
+        this.square.addEventListener('auxclick', this.handleMiddleClick);
     }
 
     handleClick() {
-   
-        if (this.status === "filled") {
-         
+        if (this.status === 'filled') {
             this.status = 'unclicked';
             this.value = 0;
-          
-        }else {
-           
-            this.status = "filled";
+        } else {
+            this.status = 'filled';
             this.value = 1;
         }
         this.render();
@@ -1235,11 +1251,11 @@ class Square {
 
     handleRightClick(e) {
         e.preventDefault();
-        if (this.status === "exed") {
-            this.status = "unclicked";
+        if (this.status === 'exed') {
+            this.status = 'unclicked';
             this.value = 0;
-        }else {
-            this.status = "exed"
+        } else {
+            this.status = 'exed';
             this.value = 0;
         }
         this.render();
@@ -1249,27 +1265,25 @@ class Square {
     handleMiddleClick(e) {
         if (e.button !== 1) return;
 
-        if (this.status === "maybe") {
-            this.status = "unclicked";
+        if (this.status === 'maybe') {
+            this.status = 'unclicked';
             this.value = 0;
-        }else {
-            this.status = "maybe";
+        } else {
+            this.status = 'maybe';
             this.value = 0;
         }
         this.render();
     }
 
     render() {
-        
-        this.square.className="square ";
+        this.square.className = 'square ';
         this.square.className += this.status;
         return this.square;
     }
-   
 }
 
-
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Square);
+
 
 /***/ }),
 
