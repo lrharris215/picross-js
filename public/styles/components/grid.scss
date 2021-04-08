@@ -7,8 +7,11 @@
     padding: 0 6em;
     margin: 0 auto;
     min-height: 20em;
-    display: flex;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
     .board {
         width: fit-content;
         margin: 0 auto;
@@ -112,5 +115,41 @@
     }
     .active {
         display: block;
+    }
+    .button-box {
+        display: flex;
+        .pressed {
+            border: 2px inset $cloud-pink;
+        }
+        .unpressed {
+            border: 2px outset $cloud-pink;
+        }
+        #cursor-button {
+            width: 2em;
+            height: 2em;
+            background-color: green;
+            margin: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #x-button {
+            width: 2em;
+            height: 2em;
+            background-color: red;
+            margin: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #maybe-button {
+            width: 2em;
+            height: 2em;
+            background-color: pink;
+            margin: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
 }
