@@ -13,10 +13,8 @@ class Square {
     }
 
     handleClick() {
-        debugger;
         switch (this.game.mouseMode) {
             case 'cursor': {
-                debugger;
                 if (this.status === 'filled') {
                     this.status = 'unclicked';
                     this.value = 0;
@@ -27,7 +25,6 @@ class Square {
                 break;
             }
             case 'x-mode': {
-                debugger;
                 if (this.status === 'exed') {
                     this.status = 'unclicked';
                     this.value = 0;
@@ -38,7 +35,6 @@ class Square {
                 break;
             }
             case 'maybe': {
-                debugger;
                 if (this.status === 'maybe') {
                     this.status = 'unclicked';
                     this.value = 0;

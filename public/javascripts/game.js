@@ -70,7 +70,6 @@ class Game {
             this.currentLevel = this.levels[this.currentIdx];
             this.currentBoard = this.createNewBoard();
             this.boards.push(this.currentBoard);
-            debugger;
         } else {
             this.gameOver = true;
         }
@@ -97,7 +96,7 @@ class Game {
                     this.levelTimer.start();
                 }
                 this.incrementCurrentIdx();
-                debugger;
+
                 this.play();
             }, 3000);
         }
