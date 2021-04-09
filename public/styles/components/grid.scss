@@ -141,15 +141,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            &:hover {
+                filter: brightness((120%));
+            }
         }
         #x-button {
             width: 2em;
             height: 2em;
-            background-color: red;
+            background-color: $x-red;
             margin: 1em;
             display: flex;
             align-items: center;
             justify-content: center;
+            &:hover {
+                filter: brightness((120%));
+            }
         }
         #maybe-button {
             width: 2em;
@@ -159,6 +165,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            &:hover {
+                filter: brightness((120%));
+            }
         }
     }
 }
