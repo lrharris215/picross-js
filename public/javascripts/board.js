@@ -68,6 +68,7 @@ class Board {
 
             let griddiv = document.createElement('div');
             griddiv.className = 'grid';
+            griddiv.id = 'grid';
 
             for (let i = 0; i < this.grid.length; i++) {
                 let rowDiv = document.createElement('div');

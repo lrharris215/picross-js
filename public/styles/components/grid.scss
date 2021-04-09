@@ -98,6 +98,15 @@
                 }
             }
         }
+        .grid.cursor {
+            cursor: default;
+        }
+        .grid.x-mode {
+            cursor: no-drop;
+        }
+        .grid.maybe-mode {
+            cursor: help;
+        }
     }
     #board-modal {
         width: 100%;

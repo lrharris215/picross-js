@@ -119,6 +119,7 @@ class Game {
         const maybeButton = document.getElementById('maybe-button');
 
         cursorButton.addEventListener('click', () => {
+            const grid = document.getElementById('grid');
             if (cursorButton.className === 'pressed') {
                 return;
             } else if (cursorButton.className === 'unpressed') {
@@ -126,13 +127,16 @@ class Game {
                 xButton.className = 'unpressed';
                 maybeButton.className = 'unpressed';
                 this.mouseMode = 'cursor';
+                grid.className = 'grid cursor';
             }
         });
         xButton.addEventListener('click', () => {
+            const grid = document.getElementById('grid');
             if (xButton.className === 'pressed') {
                 xButton.className = 'unpressed';
                 cursorButton.className = 'pressed';
                 this.mouseMode = 'cursor';
+                grid.className = 'grid cursor';
 
                 return;
             } else if (xButton.className === 'unpressed') {
@@ -140,14 +144,17 @@ class Game {
                 cursorButton.className = 'unpressed';
                 maybeButton.className = 'unpressed';
                 this.mouseMode = 'x-mode';
+                grid.className = 'grid x-mode';
             }
         });
 
         maybeButton.addEventListener('click', () => {
+            const grid = document.getElementById('grid');
             if (maybeButton.className === 'pressed') {
                 maybeButton.className = 'unpressed';
                 cursorButton.className = 'pressed';
                 this.mouseMode = 'cursor';
+                grid.className = 'grid cursor';
 
                 return;
             } else if (maybeButton.className === 'unpressed') {
@@ -155,6 +162,7 @@ class Game {
                 cursorButton.className = 'unpressed';
                 xButton.className = 'unpressed';
                 this.mouseMode = 'maybe';
+                grid.className = 'grid maybe-mode';
             }
         });
     }
