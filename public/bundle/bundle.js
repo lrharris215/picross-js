@@ -716,6 +716,7 @@ __webpack_require__.r(__webpack_exports__);
 class Board {
     constructor(game, size, topNums, leftNums) {
         this.game = game;
+        this.mouseMode = this.game.mouseMode;
         this.grid = this.makeGrid(size);
         this.populateGrid();
 
@@ -735,7 +736,7 @@ class Board {
     populateGrid() {
         for (let i = 0; i < this.grid.length; i++) {
             for (let j = 0; j < this.grid[i].length; j++) {
-                let square = new _square__WEBPACK_IMPORTED_MODULE_0__.default();
+                let square = new _square__WEBPACK_IMPORTED_MODULE_0__.default(this.game);
 
                 this.grid[i][j] = square;
             }
@@ -804,84 +805,6 @@ class Board {
 
 /***/ }),
 
-/***/ "./public/javascripts/cursor_buttons.js":
-/*!**********************************************!*\
-  !*** ./public/javascripts/cursor_buttons.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _square__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./square */ "./public/javascripts/square.js");
-
-const makeMouseChangeButtons = () => {
-    const cursorButton = document.getElementById('cursor-button');
-    const xButton = document.getElementById('x-button');
-    const maybeButton = document.getElementById('maybe-button');
-
-    cursorButton.addEventListener('click', () => {
-        const squares = document.getElementsByClassName('square');
-
-        if (cursorButton.className === 'pressed') {
-            return;
-        } else if (cursorButton.className === 'unpressed') {
-            cursorButton.className = 'pressed';
-            xButton.className = 'unpressed';
-            maybeButton.className = 'unpressed';
-
-            for (let i = 0; i < squares.length; i++) {
-                let square = squares[i];
-                square.removeEventListener('click', square.handleRightClick);
-                square.removeEventListener('click', square.handleMiddleClick);
-                square.addEventListener('click', square.handleClick);
-            }
-        }
-    });
-
-    xButton.addEventListener('click', () => {
-        const squares = document.getElementsByClassName('square');
-
-        if (xButton.className === 'pressed') {
-            xButton.className = 'unpressed';
-            cursorButton.className = 'pressed';
-            return;
-        } else if (xButton.className === 'unpressed') {
-            xButton.className = 'pressed';
-            cursorButton.className = 'unpressed';
-            maybeButton.className = 'unpressed';
-
-            for (let i = 0; i < squares.length; i++) {
-                let square = squares[i];
-                debugger;
-                square.removeEventListener('click', square.handleClick);
-                square.removeEventListener('click', square.handleMiddleClick);
-                square.addEventListener('click', square.handleRightClick);
-            }
-        }
-    });
-
-    maybeButton.addEventListener('click', () => {
-        const squares = document.getElementsByClassName('square');
-
-        if (maybeButton.className === 'pressed') {
-            maybeButton.className = 'unpressed';
-            cursorButton.className = 'pressed';
-            return;
-        } else if (maybeButton.className === 'unpressed') {
-            maybeButton.className = 'pressed';
-            cursorButton.className = 'unpressed';
-            xButton.className = 'unpressed';
-        }
-    });
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (makeMouseChangeButtons);
-
-
-/***/ }),
-
 /***/ "./public/javascripts/game.js":
 /*!************************************!*\
   !*** ./public/javascripts/game.js ***!
@@ -927,6 +850,8 @@ class Game {
         this.levelTimer.start();
         this.boardDiv = document.getElementById('board');
         this.boardDiv.addEventListener('click', () => this.update());
+        this.mouseMode = 'cursor';
+        this.makeMouseChangeButtons();
     }
 
     isLevelWon(board) {
@@ -1000,12 +925,51 @@ class Game {
         this.currentBoard.render();
     }
 
-    // restart() {
-    //     this.currentIdx = 0;
-    //     this.currentLevel = this.levels[this.currentIdx];
-    //     this.currentBoard = this.createNewBoard();
-    //     this.play();
-    // }
+    makeMouseChangeButtons() {
+        const cursorButton = document.getElementById('cursor-button');
+        const xButton = document.getElementById('x-button');
+        const maybeButton = document.getElementById('maybe-button');
+
+        cursorButton.addEventListener('click', () => {
+            if (cursorButton.className === 'pressed') {
+                return;
+            } else if (cursorButton.className === 'unpressed') {
+                cursorButton.className = 'pressed';
+                xButton.className = 'unpressed';
+                maybeButton.className = 'unpressed';
+                this.mouseMode = 'cursor';
+            }
+        });
+        xButton.addEventListener('click', () => {
+            if (xButton.className === 'pressed') {
+                xButton.className = 'unpressed';
+                cursorButton.className = 'pressed';
+                this.mouseMode = 'cursor';
+
+                return;
+            } else if (xButton.className === 'unpressed') {
+                xButton.className = 'pressed';
+                cursorButton.className = 'unpressed';
+                maybeButton.className = 'unpressed';
+                this.mouseMode = 'x-mode';
+            }
+        });
+
+        maybeButton.addEventListener('click', () => {
+            if (maybeButton.className === 'pressed') {
+                maybeButton.className = 'unpressed';
+                cursorButton.className = 'pressed';
+                this.mouseMode = 'cursor';
+
+                return;
+            } else if (maybeButton.className === 'unpressed') {
+                maybeButton.className = 'pressed';
+                cursorButton.className = 'unpressed';
+                xButton.className = 'unpressed';
+                this.mouseMode = 'maybe';
+            }
+        });
+    }
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Game);
@@ -1225,7 +1189,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 class Square {
-    constructor() {
+    constructor(game) {
+        this.game = game;
         this.status = 'unclicked'; // unclicked, filled, exed, maybe
         this.value = 0;
         this.handleClick = this.handleClick.bind(this);
@@ -1238,13 +1203,54 @@ class Square {
     }
 
     handleClick() {
-        if (this.status === 'filled') {
-            this.status = 'unclicked';
-            this.value = 0;
-        } else {
-            this.status = 'filled';
-            this.value = 1;
+        debugger;
+        switch (this.game.mouseMode) {
+            case 'cursor': {
+                debugger;
+                if (this.status === 'filled') {
+                    this.status = 'unclicked';
+                    this.value = 0;
+                } else {
+                    this.status = 'filled';
+                    this.value = 1;
+                }
+                break;
+            }
+            case 'x-mode': {
+                debugger;
+                if (this.status === 'exed') {
+                    this.status = 'unclicked';
+                    this.value = 0;
+                } else {
+                    this.status = 'exed';
+                    this.value = 0;
+                }
+                break;
+            }
+            case 'maybe': {
+                debugger;
+                if (this.status === 'maybe') {
+                    this.status = 'unclicked';
+                    this.value = 0;
+                } else {
+                    this.status = 'maybe';
+                    this.value = 0;
+                }
+                break;
+            }
+            default: {
+                if (this.status === 'filled') {
+                    this.status = 'unclicked';
+                    this.value = 0;
+                } else {
+                    this.status = 'filled';
+                    this.value = 1;
+                }
+                break;
+            }
         }
+        console.log(this.game.mouseMode);
+
         this.render();
         return;
     }
@@ -1466,15 +1472,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _level__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./level */ "./public/javascripts/level.js");
 /* harmony import */ var _styles_index_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/index.scss */ "./public/styles/index.scss");
 /* harmony import */ var _game__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./game */ "./public/javascripts/game.js");
-/* harmony import */ var _cursor_buttons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cursor_buttons */ "./public/javascripts/cursor_buttons.js");
 
 
 
 
-
+// import makeMouseChangeButtons from './cursor_buttons';
 
 document.addEventListener('DOMContentLoaded', () => {
-    (0,_cursor_buttons__WEBPACK_IMPORTED_MODULE_4__.default)();
+    // makeMouseChangeButtons();
 
     const instructionButton = document.getElementById('instructions-button');
     const instructionDetail = document.getElementById('instructions-detail');

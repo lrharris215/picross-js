@@ -39,6 +39,8 @@ class Game {
         this.levelTimer.start();
         this.boardDiv = document.getElementById('board');
         this.boardDiv.addEventListener('click', () => this.update());
+        this.mouseMode = 'cursor';
+        this.makeMouseChangeButtons();
     }
 
     isLevelWon(board) {
@@ -112,12 +114,51 @@ class Game {
         this.currentBoard.render();
     }
 
-    // restart() {
-    //     this.currentIdx = 0;
-    //     this.currentLevel = this.levels[this.currentIdx];
-    //     this.currentBoard = this.createNewBoard();
-    //     this.play();
-    // }
+    makeMouseChangeButtons() {
+        const cursorButton = document.getElementById('cursor-button');
+        const xButton = document.getElementById('x-button');
+        const maybeButton = document.getElementById('maybe-button');
+
+        cursorButton.addEventListener('click', () => {
+            if (cursorButton.className === 'pressed') {
+                return;
+            } else if (cursorButton.className === 'unpressed') {
+                cursorButton.className = 'pressed';
+                xButton.className = 'unpressed';
+                maybeButton.className = 'unpressed';
+                this.mouseMode = 'cursor';
+            }
+        });
+        xButton.addEventListener('click', () => {
+            if (xButton.className === 'pressed') {
+                xButton.className = 'unpressed';
+                cursorButton.className = 'pressed';
+                this.mouseMode = 'cursor';
+
+                return;
+            } else if (xButton.className === 'unpressed') {
+                xButton.className = 'pressed';
+                cursorButton.className = 'unpressed';
+                maybeButton.className = 'unpressed';
+                this.mouseMode = 'x-mode';
+            }
+        });
+
+        maybeButton.addEventListener('click', () => {
+            if (maybeButton.className === 'pressed') {
+                maybeButton.className = 'unpressed';
+                cursorButton.className = 'pressed';
+                this.mouseMode = 'cursor';
+
+                return;
+            } else if (maybeButton.className === 'unpressed') {
+                maybeButton.className = 'pressed';
+                cursorButton.className = 'unpressed';
+                xButton.className = 'unpressed';
+                this.mouseMode = 'maybe';
+            }
+        });
+    }
 }
 
 export default Game;

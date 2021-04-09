@@ -2,10 +2,10 @@ import Board from './board';
 import Level from './level';
 import '../styles/index.scss';
 import Game from './game';
-import makeMouseChangeButtons from './cursor_buttons';
+// import makeMouseChangeButtons from './cursor_buttons';
 
 document.addEventListener('DOMContentLoaded', () => {
-    makeMouseChangeButtons();
+    // makeMouseChangeButtons();
 
     const instructionButton = document.getElementById('instructions-button');
     const instructionDetail = document.getElementById('instructions-detail');

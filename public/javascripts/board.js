@@ -2,6 +2,7 @@ import Square from './square';
 class Board {
     constructor(game, size, topNums, leftNums) {
         this.game = game;
+        this.mouseMode = this.game.mouseMode;
         this.grid = this.makeGrid(size);
         this.populateGrid();
 
@@ -21,7 +22,7 @@ class Board {
     populateGrid() {
         for (let i = 0; i < this.grid.length; i++) {
             for (let j = 0; j < this.grid[i].length; j++) {
-                let square = new Square();
+                let square = new Square(this.game);
 
                 this.grid[i][j] = square;
             }

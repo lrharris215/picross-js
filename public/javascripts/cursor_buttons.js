@@ -1,12 +1,9 @@
-import Square from './square';
 const makeMouseChangeButtons = () => {
     const cursorButton = document.getElementById('cursor-button');
     const xButton = document.getElementById('x-button');
     const maybeButton = document.getElementById('maybe-button');
 
     cursorButton.addEventListener('click', () => {
-        const squares = document.getElementsByClassName('square');
-
         if (cursorButton.className === 'pressed') {
             return;
         } else if (cursorButton.className === 'unpressed') {
