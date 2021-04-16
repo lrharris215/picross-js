@@ -39,14 +39,17 @@ class Timer {
         this.intervalId = null;
     }
     togglePause() {
+        const pauseIcon = document.getElementById('pause-icon');
         if (!this.intervalId) {
             const modal = document.getElementById('board-modal');
             modal.className = 'hidden';
+            pauseIcon.className = 'fas fa-pause';
             this.start();
         } else {
             this.end();
             const modal = document.getElementById('board-modal');
             modal.className = 'active';
+            pauseIcon.className = 'fas fa-play';
         }
     }
 }
