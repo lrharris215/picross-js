@@ -17,26 +17,9 @@
 -   Bonus:
     -   Possibly a story to weave it all together?
 
-## Wireframes
-
-![wireframe](./public/images/wireframe.png)
-
 ## Architecture and Technology
 
-= This project will be built using just vanilla javascript, HTML, and CSS/SCSS.
-
-## Implementation Timeline
-
--   Monday and Tuesday will be spent building the components and game logic.
-    -   Board and Square components
-    -   Clicking functionality
--   Wednesday building a level
-    -   Making sure the game logic is sound
-    -   Making sure everything renders correctly
-    -   Writing the tutorial
--   Thursday building the rest of the levels
-    -   Assuming Wednesday went well, the rest of the levels should be easier to implement.
--   Friday css/ finishing touches
+- This project will be built using just vanilla javascript, HTML, and CSS/SCSS.
 
 ## Bonus Features
 
